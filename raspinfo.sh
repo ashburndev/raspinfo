@@ -1,0 +1,46 @@
+date
+
+uptime
+
+hostname
+
+hostname -I
+
+uname -a
+
+cat /proc/cpuinfo | tail -3
+
+vcgencmd version
+
+vcgencmd get_lcd_info
+
+vcgencmd measure_temp
+
+java -version
+
+javac -version
+
+git --version
+
+df -k
+
+ls -latr ~
+
+ls -latr /
+
+ls -latr /boot
+
+ifconfig
+
+tvservice -n
+
+tvservice -s
+
+tvservice -a
+
+tvservice -m CEA && tvservice -m DMT
+
+tvservice -d edid.dat
+
+edidparser edid.dat
+
