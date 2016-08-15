@@ -362,4 +362,20 @@ The above commands produced this output.
     edid_parser exited with code 0
     pi@dphrpi35:~ $ 
     
+## List of my Raspberry Pi computers
+
+| CPU HW  | CPU REV | CPU SERIAL       | HOST NAME | MAC ADDR          | IP ADDR    | CASE TYPE      | HAT  |
+| ------- | ------- | ---------------- | --------- | ----------------- | ---------- | -------------- | ---- |
+| BCM2709 | a22082  | 000000001589b94e | dphrpi35  | b8:27:eb:89:b9:4e | 10.0.0.224 | Red/White RPI3 | none |
+| BCM2709 | a22082  | 000000001589b94e | dphrpi35  | b8:27:eb:89:b9:4e | 10.0.0.224 | Red/White RPI3 | none |
+| BCM2709 | a22082  | 000000001589b94e | dphrpi35  | b8:27:eb:89:b9:4e | 10.0.0.224 | Red/White RPI3 | none |
+| BCM2709 | a22082  | 000000001589b94e | dphrpi35  | b8:27:eb:89:b9:4e | 10.0.0.224 | Red/White RPI3 | none |
+| BCM2709 | a22082  | 000000001589b94e | dphrpi35  | b8:27:eb:89:b9:4e | 10.0.0.224 | Red/White RPI3 | none |
+| BCM2709 | a22082  | 000000001589b94e | dphrpi35  | b8:27:eb:89:b9:4e | 10.0.0.224 | Red/White RPI3 | none |
+| BCM2709 | a22082  | 000000001589b94e | dphrpi35  | b8:27:eb:89:b9:4e | 10.0.0.224 | Red/White RPI3 | none |
+| BCM2709 | a22082  | 000000001589b94e | dphrpi35  | b8:27:eb:89:b9:4e | 10.0.0.224 | Red/White RPI3 | none |
+| BCM2709 | a22082  | 000000001589b94e | dphrpi35  | b8:27:eb:89:b9:4e | 10.0.0.224 | Red/White RPI3 | none |
+| BCM2709 | a22082  | 000000001589b94e | dphrpi35  | b8:27:eb:89:b9:4e | 10.0.0.224 | Red/White RPI3 | none |
+
+WHEREPURCHASED, WHENPURCHASED, FIRMWAREDATE, RASPIANDATE, 
 
