@@ -86,4 +86,32 @@ The commands above produced these results
     ashburndave@dphnuc:~/Downloads/rasptemp$ sudo eject /dev/sdd
     [sudo] password for ashburndave: 
     ashburndave@dphnuc:~/Downloads/rasptemp$ 
+    
+## Running a script file on the Raspberry Pi
+
+After I ran raspi-config (to set the hostname and edit the localization settings), I ran a script file containing these commands (the actual script file has a blank line between each command, to make the output more readable).
+
+   date
+   uptime
+   hostname
+   hostname -I
+   uname -a
+   cat /proc/cpuinfo | tail -3
+   vcgencmd version
+   vcgencmd get_lcd_info
+   vcgencmd measure_temp
+   java -version
+   javac -version
+   git --version
+   df -k
+   ls -latr ~
+   ls -latr /
+   ls -latr /boot
+   ifconfig
+   tvservice -n
+   tvservice -s
+   tvservice -a
+   tvservice -m CEA && tvservice -m DMT
+   tvservice -d edid.dat
+   edidparser edid.dat
 
