@@ -2,6 +2,8 @@ date
 
 vcgencmd version
 
+vcgencmd get_lcd_info
+
 tvservice -n
 
 tvservice -s
