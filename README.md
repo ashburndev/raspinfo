@@ -21,11 +21,11 @@ Using my Linux computer (an Intel NUC D54250WYKH [Haswell cpu] runing Ubuntu 14.
     sudo eject /dev/sdd
     
 reference:
-http://elinux.org/RPi_Easy_SD_Card_Setup
-http://www.intel.com/content/www/us/en/nuc/nuc-kit-d54250wyk-board-d54250wyb.html
-http://www.intel.com.au/content/www/au/en/nuc/nuc-kit-d54250wykh.html
-http://www.intel.com/content/www/us/en/nuc/nuc-kit-d54250wykh-brief.html
-http://www.intel.com/content/dam/www/public/us/en/documents/product-briefs/nuc-kit-d54250wykh-brief.pdf
+    http://elinux.org/RPi_Easy_SD_Card_Setup
+    http://www.intel.com/content/www/us/en/nuc/nuc-kit-d54250wyk-board-d54250wyb.html
+    http://www.intel.com.au/content/www/au/en/nuc/nuc-kit-d54250wykh.html
+    http://www.intel.com/content/www/us/en/nuc/nuc-kit-d54250wykh-brief.html
+    http://www.intel.com/content/dam/www/public/us/en/documents/product-briefs/nuc-kit-d54250wykh-brief.pdf
 
 The commands above produced these results
 
