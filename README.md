@@ -1,9 +1,9 @@
 # raspinfo
 a simple Grails web application to display information about my Raspberry Pi
 
-## Creating the micro sd card to insert into the Raspberry Pi
+## Preparing the micro sd card to insert into the Raspberry Pi
 
-Using my Linux computer (an Intel NUC), I ran these commands
+Using my Linux computer (an Intel NUC D54250WYKH [Haswell cpu] runing Ubuntu 14.04), I ran the commands below
 
     ls -latr
     cat 2016-05-27-raspbian-jessie.shasum
@@ -19,6 +19,13 @@ Using my Linux computer (an Intel NUC), I ran these commands
     eject /dev/sdd
     eject /dev/sdd1
     sudo eject /dev/sdd
+    
+reference:
+http://elinux.org/RPi_Easy_SD_Card_Setup
+http://www.intel.com/content/www/us/en/nuc/nuc-kit-d54250wyk-board-d54250wyb.html
+http://www.intel.com.au/content/www/au/en/nuc/nuc-kit-d54250wykh.html
+http://www.intel.com/content/www/us/en/nuc/nuc-kit-d54250wykh-brief.html
+http://www.intel.com/content/dam/www/public/us/en/documents/product-briefs/nuc-kit-d54250wykh-brief.pdf
 
 The commands above produced these results
 
@@ -90,6 +97,8 @@ The commands above produced these results
 
 After I ran raspi-config (to set the hostname and edit the localization settings), I ran a script file containing these commands (the actual script file has a blank line between each command, to make the output more readable).
 
+    cat raspinfo.sh | grep -v ^$
+    
     date
     uptime
     hostname
@@ -99,28 +108,47 @@ After I ran raspi-config (to set the hostname and edit the localization settings
     vcgencmd version
     vcgencmd get_lcd_info
     vcgencmd measure_temp
+    vcgencmd get_mem arm && vcgencmd get_mem gpu
     java -version
     javac -version
     git --version
-    df -k
-    ls -latr ~
-    ls -latr /
-    ls -latr /boot
     ifconfig
+    lsusb
+    lsusb -t
+    free -o
+    free -o -h
+    df -k
+    df -h
+    sudo fdisk -l | tail -5
+    sudo blkid
+    lsblk
+    sudo parted -l
+    sudo service --status-all
     tvservice -n
     tvservice -s
     tvservice -a
     tvservice -m CEA && tvservice -m DMT
     tvservice -d edid.dat
     edidparser edid.dat
+    cat /proc/sys/kernel/hostname
+    cat /proc/sys/kernel/ostype
+    cat /proc/sys/kernel/osrelease
+    cat /proc/sys/kernel/pid_max
+    cat /proc/sys/kernel/poweroff_cmd
+    cat /proc/version
+    cat /proc/meminfo
+    cat /proc/cpuinfo
+    ls -latr ~
+    ls -latr /
+    ls -latr /boot
     
 The above commands produced this output.
 
     pi@dphrpi35:~ $ date
-    Mon Aug 15 07:10:59 EDT 2016
+    Tue Aug 16 08:32:45 EDT 2016
     pi@dphrpi35:~ $ 
     pi@dphrpi35:~ $ uptime
-     07:10:59 up 1 min,  2 users,  load average: 0.32, 0.15, 0.05
+     08:32:45 up 1 day,  1:22,  2 users,  load average: 0.03, 0.05, 0.05
     pi@dphrpi35:~ $ 
     pi@dphrpi35:~ $ hostname
     dphrpi35
@@ -145,7 +173,7 @@ The above commands produced this output.
     1920 1080 24
     pi@dphrpi35:~ $ 
     pi@dphrpi35:~ $ vcgencmd measure_temp
-    temp=58.0'C
+    temp=56.9'C
     pi@dphrpi35:~ $ 
     pi@dphrpi35:~ $ java -version
     java version "1.8.0_65"
@@ -160,17 +188,17 @@ The above commands produced this output.
     pi@dphrpi35:~ $ 
     pi@dphrpi35:~ $ df -k
     Filesystem     1K-blocks    Used Available Use% Mounted on
-    /dev/root       15183540 3469852  11042208  24% /
+    /dev/root       15183540 3587956  10924104  25% /
     devtmpfs          469540       0    469540   0% /dev
     tmpfs             473872       0    473872   0% /dev/shm
-    tmpfs             473872    6464    467408   2% /run
+    tmpfs             473872    6476    467396   2% /run
     tmpfs               5120       4      5116   1% /run/lock
     tmpfs             473872       0    473872   0% /sys/fs/cgroup
-    /dev/mmcblk0p1     64456   20984     43472  33% /boot
-    tmpfs              94776       0     94776   0% /run/user/1000
+    /dev/mmcblk0p1     64456   21000     43456  33% /boot
+    tmpfs              94776       4     94772   1% /run/user/1000
     pi@dphrpi35:~ $ 
     pi@dphrpi35:~ $ ls -latr ~
-    total 172
+    total 196
     drwxr-xr-x  3 root root  4096 May 27 07:09 ..
     -rw-r--r--  1 pi   pi     675 May 27 07:09 .profile
     -rw-r--r--  1 pi   pi    3512 May 27 07:09 .bashrc
@@ -203,18 +231,20 @@ The above commands produced this output.
     drwxr-xr-x 13 pi   pi    4096 Aug 14 16:49 .config
     -rw-r--r--  1 pi   pi    7463 Aug 15 06:48 miscinfo.txt
     -rwxrwxrwx  1 pi   pi     367 Aug 15 07:03 raspinfo.sh
-    -rw-r--r--  1 pi   pi     128 Aug 15 07:04 edid.dat
     -rw-r--r--  1 pi   pi   12356 Aug 15 07:06 raspinfo.txt
     -rw-------  1 pi   pi    3501 Aug 15 07:09 .bash_history
     -rw-------  1 pi   pi     109 Aug 15 07:09 .Xauthority
-    drwxr-xr-x 20 pi   pi    4096 Aug 15 07:09 .
     -rw-------  1 pi   pi     353 Aug 15 07:09 .xsession-errors
+    -rw-r--r--  1 pi   pi     128 Aug 15 07:11 DELL_S2340M.edid.dat
+    -rw-r--r--  1 pi   pi   12281 Aug 15 07:12 dphrpi35-raspinfo.txt
+    -rw-r--r--  1 pi   pi     417 Aug 15 08:22 raspinfo-short.txt
+    drwxr-xr-x  3 pi   pi    4096 Aug 15 08:42 g2projects
+    -rw-r--r--  1 pi   pi      64 Aug 15 08:46 .gitconfig
+    drwxr-xr-x 21 pi   pi    4096 Aug 16 08:31 .
     pi@dphrpi35:~ $ 
     pi@dphrpi35:~ $ ls -latr /
     total 92
-    drwxr-xr-x   3 root root 16384 Dec 31  1969 boot
-    dr-xr-xr-x 158 root root     0 Dec 31  1969 proc
-    dr-xr-xr-x  12 root root     0 Dec 31  1969 sys
+    dr-xr-xr-x 156 root root     0 Dec 31  1969 proc
     drwx------   2 root root  4096 May 27 07:04 root
     drwxr-xr-x   2 root root  4096 May 27 07:04 mnt
     drwxr-xr-x   2 root root  4096 May 27 07:04 srv
@@ -222,47 +252,49 @@ The above commands produced this output.
     drwxr-xr-x   3 root root  4096 May 27 07:09 home
     drwxr-xr-x   2 root root  4096 May 27 07:22 bin
     drwxr-xr-x  19 root root  4096 May 27 07:22 lib
-    drwxr-xr-x   2 root root  4096 May 27 07:22 sbin
     drwxr-xr-x  11 root root  4096 May 27 07:34 usr
     drwxr-xr-x   7 root root  4096 May 27 07:36 opt
     drwx------   2 root root 16384 May 27 07:43 lost+found
     drwxr-xr-x  11 root root  4096 May 27 07:50 var
     drwxr-xr-x  21 root root  4096 Aug 14 11:15 ..
     drwxr-xr-x  21 root root  4096 Aug 14 11:15 .
-    drwxr-xr-x 110 root root  4096 Aug 15 07:09 etc
     drwxr-xr-x  15 root root  3400 Aug 15 07:09 dev
-    drwxr-xr-x  21 root root   740 Aug 15 07:09 run
-    drwxrwxrwt  12 root root  4096 Aug 15 07:10 tmp
+    dr-xr-xr-x  12 root root     0 Aug 15 07:11 sys
+    drwxr-xr-x   2 root root  4096 Aug 15 07:20 sbin
+    drwxr-xr-x  22 root root   760 Aug 15 07:27 run
+    drwxr-xr-x   3 root root 16384 Aug 15 07:27 boot
+    drwxr-xr-x 110 root root  4096 Aug 15 07:27 etc
+    drwxrwxrwt  12 root root  4096 Aug 16 08:32 tmp
     pi@dphrpi35:~ $ 
     pi@dphrpi35:~ $ ls -latr /boot
-    total 20348
-    drwxr-xr-x  3 root root   16384 Dec 31  1969 .
+    total 20340
     -rwxr-xr-x  1 root root     136 Dec 31  1979 cmdline.txt
-    -rwxr-xr-x  1 root root   18693 Aug 21  2015 COPYING.linux
-    -rwxr-xr-x  1 root root    1494 Nov 18  2015 LICENCE.broadcom
-    -rwxr-xr-x  1 root root 4122560 May 27 06:20 kernel.img
-    -rwxr-xr-x  1 root root    9713 May 27 06:20 fixup_x.dat
-    -rwxr-xr-x  1 root root    9713 May 27 06:20 fixup_db.dat
-    -rwxr-xr-x  1 root root    6480 May 27 06:20 fixup.dat
-    -rwxr-xr-x  1 root root    2509 May 27 06:20 fixup_cd.dat
-    -rwxr-xr-x  1 root root   17932 May 27 06:20 bootcode.bin
-    -rwxr-xr-x  1 root root   15081 May 27 06:20 bcm2710-rpi-3-b.dtb
-    -rwxr-xr-x  1 root root   14411 May 27 06:20 bcm2709-rpi-2-b.dtb
-    -rwxr-xr-x  1 root root   13101 May 27 06:20 bcm2708-rpi-cm.dtb
-    -rwxr-xr-x  1 root root   13328 May 27 06:20 bcm2708-rpi-b-plus.dtb
-    -rwxr-xr-x  1 root root   13065 May 27 06:20 bcm2708-rpi-b.dtb
-    -rwxr-xr-x  1 root root 3887400 May 27 06:20 start_x.elf
-    -rwxr-xr-x  1 root root 2743224 May 27 06:20 start.elf
-    -rwxr-xr-x  1 root root 4934920 May 27 06:20 start_db.elf
-    -rwxr-xr-x  1 root root  615896 May 27 06:20 start_cd.elf
-    -rwxr-xr-x  1 root root 4224096 May 27 06:20 kernel7.img
-    drwxr-xr-x  2 root root    8192 May 27 08:08 overlays
     -rwxr-xr-x  1 root root    1635 May 27 08:09 config.txt.orig
     -rwxr-xr-x  1 root root    1635 May 27 08:09 config.txt
     -rwxr-xr-x  1 root root   18974 May 27 08:50 LICENSE.oracle
     -rwxr-xr-x  1 root root     145 May 27 08:50 issue.txt
     drwxr-xr-x 21 root root    4096 Aug 14 11:15 ..
     -rwxr-xr-x  1 root root    1759 Aug 14 15:42 config.txt.fail
+    -rwxr-xr-x  1 root root   13484 Aug 15 07:27 bcm2708-rpi-b-plus.dtb
+    -rwxr-xr-x  1 root root   13221 Aug 15 07:27 bcm2708-rpi-b.dtb
+    -rwxr-xr-x  1 root root   15237 Aug 15 07:27 bcm2710-rpi-3-b.dtb
+    -rwxr-xr-x  1 root root   14567 Aug 15 07:27 bcm2709-rpi-2-b.dtb
+    -rwxr-xr-x  1 root root   13257 Aug 15 07:27 bcm2708-rpi-cm.dtb
+    -rwxr-xr-x  1 root root 4123112 Aug 15 07:27 kernel.img
+    -rwxr-xr-x  1 root root 4224232 Aug 15 07:27 kernel7.img
+    -rwxr-xr-x  1 root root   18693 Aug 15 07:27 COPYING.linux
+    drwxr-xr-x  2 root root    8192 Aug 15 07:27 overlays
+    -rwxr-xr-x  1 root root 2746552 Aug 15 07:27 start.elf
+    -rwxr-xr-x  1 root root  617432 Aug 15 07:27 start_cd.elf
+    -rwxr-xr-x  1 root root 3877720 Aug 15 07:27 start_x.elf
+    -rwxr-xr-x  1 root root 4926264 Aug 15 07:27 start_db.elf
+    -rwxr-xr-x  1 root root    9717 Aug 15 07:27 fixup_db.dat
+    -rwxr-xr-x  1 root root    6482 Aug 15 07:27 fixup.dat
+    -rwxr-xr-x  1 root root    2504 Aug 15 07:27 fixup_cd.dat
+    -rwxr-xr-x  1 root root    1494 Aug 15 07:27 LICENCE.broadcom
+    -rwxr-xr-x  1 root root    9717 Aug 15 07:27 fixup_x.dat
+    -rwxr-xr-x  1 root root   17932 Aug 15 07:27 bootcode.bin
+    drwxr-xr-x  3 root root   16384 Aug 15 07:27 .
     pi@dphrpi35:~ $ 
     pi@dphrpi35:~ $ ifconfig
     eth0      Link encap:Ethernet  HWaddr b8:27:eb:89:b9:4e  
@@ -271,10 +303,10 @@ The above commands produced this output.
               inet6 addr: 2601:5cc:c802:7643:6aa7:5bed:6c80:e60d/64 Scope:Global
               inet6 addr: 2601:5cc:c802:7643::ef60/128 Scope:Global
               UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-              RX packets:64 errors:0 dropped:0 overruns:0 frame:0
-              TX packets:88 errors:0 dropped:0 overruns:0 carrier:0
+              RX packets:140389 errors:0 dropped:7 overruns:0 frame:0
+              TX packets:49444 errors:0 dropped:0 overruns:0 carrier:0
               collisions:0 txqueuelen:1000 
-              RX bytes:7062 (6.8 KiB)  TX bytes:13879 (13.5 KiB)
+              RX bytes:131571793 (125.4 MiB)  TX bytes:4688290 (4.4 MiB)
     
     lo        Link encap:Local Loopback  
               inet addr:127.0.0.1  Mask:255.0.0.0
@@ -288,10 +320,10 @@ The above commands produced this output.
     wlan0     Link encap:Ethernet  HWaddr b8:27:eb:dc:ec:1b  
               inet6 addr: fe80::2c36:6519:fbe7:8f5f/64 Scope:Link
               UP BROADCAST MULTICAST  MTU:1500  Metric:1
-              RX packets:2 errors:0 dropped:2 overruns:0 frame:0
+              RX packets:56843 errors:0 dropped:56843 overruns:0 frame:0
               TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
               collisions:0 txqueuelen:1000 
-              RX bytes:400 (400.0 B)  TX bytes:0 (0.0 B)
+              RX bytes:24174456 (23.0 MiB)  TX bytes:0 (0.0 B)
     
     pi@dphrpi35:~ $ 
     pi@dphrpi35:~ $ tvservice -n
