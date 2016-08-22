@@ -22,6 +22,16 @@ java -version
 
 javac -version
 
+ruby -v
+
+python -V
+
+python3 -V
+
+node -v
+
+npm -v
+
 git --version
 
 ifconfig
@@ -39,6 +49,8 @@ df -k
 df -h
 
 sudo fdisk -l | tail -5
+
+mount
 
 sudo blkid
 
@@ -58,6 +70,8 @@ tvservice -m CEA && tvservice -m DMT
 
 tvservice -d edid.dat
 
+xxd -g l edid.dat
+
 edidparser edid.dat
 
 cat /proc/sys/kernel/hostname
@@ -76,10 +90,14 @@ cat /proc/meminfo
 
 cat /proc/cpuinfo
 
-ls -latr ~
+cat /proc/cmdline
+
+cat /proc/partitions
 
 ls -latr /
 
 ls -latr /boot
+
+ls -latr ~
 
 

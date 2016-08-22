@@ -1,0 +1,89 @@
+pi@dphrpi35:~ $ date
+Mon Aug 22 06:31:32 EDT 2016
+pi@dphrpi35:~ $ 
+pi@dphrpi35:~ $ vcgencmd version
+Jun 20 2016 18:13:27 
+Copyright (c) 2012 Broadcom
+version 460b39c674ef2ac89360e15331f97a2cb1388a44 (clean) (release)
+pi@dphrpi35:~ $ 
+pi@dphrpi35:~ $ vcgencmd get_lcd_info
+1920 1080 24
+pi@dphrpi35:~ $ 
+pi@dphrpi35:~ $ tvservice -n
+device_name=DEL-DELL_S2340M
+pi@dphrpi35:~ $ 
+pi@dphrpi35:~ $ tvservice -s
+state 0x120006 [DVI DMT (82) RGB full 16:9], 1920x1080 @ 60.00Hz, progressive
+pi@dphrpi35:~ $ 
+pi@dphrpi35:~ $ tvservice -a
+pi@dphrpi35:~ $ 
+pi@dphrpi35:~ $ tvservice -m CEA && tvservice -m DMT
+Group CEA has 0 modes:
+Group DMT has 10 modes:
+           mode 4: 640x480 @ 60Hz 4:3, clock:25MHz progressive 
+           mode 6: 640x480 @ 75Hz 4:3, clock:31MHz progressive 
+           mode 9: 800x600 @ 60Hz 4:3, clock:40MHz progressive 
+           mode 11: 800x600 @ 75Hz 4:3, clock:49MHz progressive 
+           mode 16: 1024x768 @ 60Hz 4:3, clock:65MHz progressive 
+           mode 18: 1024x768 @ 75Hz 4:3, clock:78MHz progressive 
+           mode 21: 1152x864 @ 75Hz 4:3, clock:108MHz progressive 
+           mode 35: 1280x1024 @ 60Hz 5:4, clock:108MHz progressive 
+           mode 36: 1280x1024 @ 75Hz 5:4, clock:135MHz progressive 
+  (prefer) mode 82: 1920x1080 @ 60Hz 16:9, clock:148MHz progressive 
+pi@dphrpi35:~ $ 
+pi@dphrpi35:~ $ tvservice -d edid.dat
+Written 128 bytes to edid.dat
+pi@dphrpi35:~ $ 
+pi@dphrpi35:~ $ xxd -g l edid.dat
+0000000: 00ffffffffffff0010ac5ad054314432  ..........Z.T1D2
+0000010: 2217010380331d78eae295a2554f9f26  "....3.x....UO.&
+0000020: 115054a54b00714f8180d1c001010101  .PT.K.qO........
+0000030: 010101010101023a801871382d40582c  .......:..q8-@X,
+0000040: 4500fd1e1100001e000000ff00323933  E............293
+0000050: 4d3333384f324431540a000000fc0044  M338O2D1T......D
+0000060: 454c4c2053323334304d0a20000000fd  ELL S2340M. ....
+0000070: 00384c1e5311000a20202020202000bd  .8L.S...      ..
+pi@dphrpi35:~ $ 
+pi@dphrpi35:~ $ edidparser edid.dat
+Enabling fuzzy format match...
+Parsing edid.dat...
+HDMI:EDID version 1.3, 0 extensions, screen size 51x29 cm
+HDMI:EDID features - videodef 0x80 standby suspend active off; colour encoding:RGB444|YCbCr422; sRGB is not default colourspace; preferred format is native; does not support GTF
+HDMI:EDID found monitor S/N descriptor tag 0xff
+HDMI:EDID found monitor name descriptor tag 0xfc
+HDMI:EDID monitor name is DELL_S2340M
+HDMI:EDID found monitor range descriptor tag 0xfd
+HDMI:EDID monitor range offsets: V min=0, V max=0, H min=0, H max=0
+HDMI:EDID monitor range: vertical is 56-76 Hz, horizontal is 30-83 kHz, max pixel clock is 170 MHz
+HDMI:EDID monitor range does not support GTF
+HDMI:EDID found preferred CEA detail timing format: 1920x1080p @ 60 Hz (16)
+HDMI:EDID established timing I/II bytes are A5 4B 00
+HDMI:EDID found DMT format: code 4, 640x480p @ 60 Hz in established timing I/II
+HDMI:EDID found DMT format: code 6, 640x480p @ 75 Hz in established timing I/II
+HDMI:EDID found DMT format: code 9, 800x600p @ 60 Hz in established timing I/II
+HDMI:EDID found DMT format: code 11, 800x600p @ 75 Hz in established timing I/II
+HDMI:EDID found DMT format: code 16, 1024x768p @ 60 Hz in established timing I/II
+HDMI:EDID found DMT format: code 18, 1024x768p @ 75 Hz in established timing I/II
+HDMI:EDID found DMT format: code 36, 1280x1024p @ 75 Hz in established timing I/II
+HDMI:EDID standard timings block x 8: 0x714F 8180 D1C0 0101 0101 0101 0101 0101 
+HDMI:EDID found DMT format: code 21, 1152x864p @ 75 Hz (4:3) in standard timing 0
+HDMI:EDID found DMT format: code 35, 1280x1024p @ 60 Hz (5:4) in standard timing 1
+HDMI:EDID found DMT format: code 82, 1920x1080p @ 60 Hz (16:9) in standard timing 2
+HDMI:EDID moving support for CEA mode 16 to DMT mode 82 because sink does not support HDMI
+HDMI:EDID filtering formats with pixel clock > 162 MHz or h. blanking > 1023
+HDMI:EDID best score mode initialised to CEA (1) 640x480p @ 60 Hz with pixel clock 25 MHz (score 0)
+HDMI:EDID best score mode is now DMT (4) 640x480p @ 60 Hz with pixel clock 25 MHz (score 18432)
+HDMI:EDID best score mode is now DMT (6) 640x480p @ 75 Hz with pixel clock 31 MHz (score 23040)
+HDMI:EDID best score mode is now DMT (9) 800x600p @ 60 Hz with pixel clock 40 MHz (score 28800)
+HDMI:EDID best score mode is now DMT (11) 800x600p @ 75 Hz with pixel clock 49 MHz (score 36000)
+HDMI:EDID best score mode is now DMT (16) 1024x768p @ 60 Hz with pixel clock 65 MHz (score 47185)
+HDMI:EDID best score mode is now DMT (18) 1024x768p @ 75 Hz with pixel clock 78 MHz (score 58982)
+HDMI:EDID best score mode is now DMT (21) 1152x864p @ 75 Hz with pixel clock 108 MHz (score 99649)
+HDMI:EDID best score mode is now DMT (35) 1280x1024p @ 60 Hz with pixel clock 108 MHz (score 103643)
+HDMI:EDID DMT mode (36) 1280x1024p @ 75 Hz with pixel clock 135 MHz has a score of 98304
+HDMI:EDID best score mode is now DMT (82) 1920x1080p @ 60 Hz with pixel clock 148 MHz (score 149416)
+HDMI:EDID preferred mode is updated to DMT (82) 1920x1080p @ 60 Hz with pixel clock 148500000 Hz
+HDMI:EDID has only DVI support and no audio support
+edid_parser exited with code 0
+pi@dphrpi35:~ $ 
+

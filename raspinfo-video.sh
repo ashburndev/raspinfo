@@ -14,5 +14,7 @@ tvservice -m CEA && tvservice -m DMT
 
 tvservice -d edid.dat
 
+xxd -g l edid.dat
+
 edidparser edid.dat
 
