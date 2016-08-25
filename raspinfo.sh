@@ -10,6 +10,10 @@ uname -a
 
 cat /proc/cpuinfo | tail -3
 
+lsb_release -a
+
+lscpu
+
 vcgencmd version
 
 vcgencmd get_lcd_info
@@ -50,15 +54,19 @@ df -h
 
 sudo fdisk -l | tail -5
 
-mount
-
 sudo blkid
 
 lsblk
 
 sudo parted -l
 
+mount
+
 sudo service --status-all
+
+fbset
+
+xrandr
 
 tvservice -n
 
