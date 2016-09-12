@@ -1,0 +1,629 @@
+pi@dphrpi51:~ $ date
+Mon Sep 12 13:07:08 EDT 2016
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ uptime
+ 13:07:08 up  1:53,  2 users,  load average: 0.29, 0.12, 0.08
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ hostname
+dphrpi51
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ hostname -I
+10.0.0.63 2601:5cc:c802:7643::621b 2601:5cc:c802:7643:c148:da0b:440b:3a3d 
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ uname -a
+Linux dphrpi51 4.4.11-v7+ #888 SMP Mon May 23 20:10:33 BST 2016 armv7l GNU/Linux
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ cat /proc/cpuinfo | tail -3
+Hardware	: BCM2709
+Revision	: a22082
+Serial		: 000000004d0d9199
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Raspbian
+Description:	Raspbian GNU/Linux 8.0 (jessie)
+Release:	8.0
+Codename:	jessie
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ lscpu
+Architecture:          armv7l
+Byte Order:            Little Endian
+CPU(s):                4
+On-line CPU(s) list:   0-3
+Thread(s) per core:    1
+Core(s) per socket:    4
+Socket(s):             1
+Model name:            ARMv7 Processor rev 4 (v7l)
+CPU max MHz:           1200.0000
+CPU min MHz:           600.0000
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ vcgencmd version
+May 20 2016 19:01:31 
+Copyright (c) 2012 Broadcom
+version faf071dd4885c5ac1a89483d35a5326e7f69495f (clean) (release)
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ vcgencmd get_lcd_info
+1920 1080 24
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ vcgencmd measure_temp
+temp=55.8'C
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ vcgencmd get_mem arm && vcgencmd get_mem gpu
+arm=944M
+gpu=64M
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ java -version
+java version "1.8.0_65"
+Java(TM) SE Runtime Environment (build 1.8.0_65-b17)
+Java HotSpot(TM) Client VM (build 25.65-b01, mixed mode)
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ javac -version
+javac 1.8.0_65
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ gcc --version
+gcc (Raspbian 4.9.2-10) 4.9.2
+Copyright (C) 2014 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ ruby -v
+ruby 2.1.5p273 (2014-11-13) [arm-linux-gnueabihf]
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ rvm --version
+bash: rvm: command not found
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ python -V
+Python 2.7.9
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ python2 -V
+Python 2.7.9
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ python3 -V
+Python 3.4.2
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ node -v
+v0.10.29
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ npm -v
+bash: npm: command not found
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ git --version
+git version 2.1.4
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ iwconfig
+wlan0     IEEE 802.11bgn  ESSID:off/any  
+          Mode:Managed  Access Point: Not-Associated   Tx-Power=31 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:on
+          
+lo        no wireless extensions.
+
+eth0      no wireless extensions.
+
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ ifconfig
+eth0      Link encap:Ethernet  HWaddr b8:27:eb:0d:91:99  
+          inet addr:10.0.0.63  Bcast:10.0.0.255  Mask:255.255.255.0
+          inet6 addr: 2601:5cc:c802:7643::621b/128 Scope:Global
+          inet6 addr: 2601:5cc:c802:7643:c148:da0b:440b:3a3d/64 Scope:Global
+          inet6 addr: fe80::2b6b:fd59:acdf:6da2/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:122847 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:53467 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:168193483 (160.4 MiB)  TX bytes:5075981 (4.8 MiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:136 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:136 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:11472 (11.2 KiB)  TX bytes:11472 (11.2 KiB)
+
+wlan0     Link encap:Ethernet  HWaddr b8:27:eb:58:c4:cc  
+          inet6 addr: fe80::6756:b807:5a2d:e13c/64 Scope:Link
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:3411 errors:0 dropped:3411 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:1327236 (1.2 MiB)  TX bytes:0 (0.0 B)
+
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ netstat -rn
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+0.0.0.0         10.0.0.1        0.0.0.0         UG        0 0          0 eth0
+10.0.0.0        0.0.0.0         255.255.255.0   U         0 0          0 eth0
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ lsusb --version
+lsusb (usbutils) 007
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ lsusb
+Bus 001 Device 005: ID 0000:0538  
+Bus 001 Device 004: ID 046d:c31c Logitech, Inc. Keyboard K120 for Business
+Bus 001 Device 003: ID 0424:ec00 Standard Microsystems Corp. SMSC9512/9514 Fast Ethernet Adapter
+Bus 001 Device 002: ID 0424:9514 Standard Microsystems Corp. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ lsusb | sort
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0424:9514 Standard Microsystems Corp. 
+Bus 001 Device 003: ID 0424:ec00 Standard Microsystems Corp. SMSC9512/9514 Fast Ethernet Adapter
+Bus 001 Device 004: ID 046d:c31c Logitech, Inc. Keyboard K120 for Business
+Bus 001 Device 005: ID 0000:0538  
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ lsusb -t
+/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=dwc_otg/1p, 480M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/5p, 480M
+        |__ Port 1: Dev 3, If 0, Class=Vendor Specific Class, Driver=smsc95xx, 480M
+        |__ Port 2: Dev 4, If 0, Class=Human Interface Device, Driver=usbhid, 1.5M
+        |__ Port 2: Dev 4, If 1, Class=Human Interface Device, Driver=usbhid, 1.5M
+        |__ Port 4: Dev 5, If 0, Class=Human Interface Device, Driver=usbhid, 1.5M
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ free -o
+             total       used       free     shared    buffers     cached
+Mem:        947748     927928      19820       7812      71472     707948
+Swap:       102396          0     102396
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ free -o -h
+             total       used       free     shared    buffers     cached
+Mem:          925M       906M        19M       7.6M        69M       691M
+Swap:          99M         0B        99M
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ df -k
+Filesystem     1K-blocks    Used Available Use% Mounted on
+/dev/root       30658976 3607624  25751172  13% /
+devtmpfs          469540       0    469540   0% /dev
+tmpfs             473872       0    473872   0% /dev/shm
+tmpfs             473872    6488    467384   2% /run
+tmpfs               5120       4      5116   1% /run/lock
+tmpfs             473872       0    473872   0% /sys/fs/cgroup
+/dev/mmcblk0p1     64456   20984     43472  33% /boot
+tmpfs              94776       0     94776   0% /run/user/1000
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        30G  3.5G   25G  13% /
+devtmpfs        459M     0  459M   0% /dev
+tmpfs           463M     0  463M   0% /dev/shm
+tmpfs           463M  6.4M  457M   2% /run
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           463M     0  463M   0% /sys/fs/cgroup
+/dev/mmcblk0p1   63M   21M   43M  33% /boot
+tmpfs            93M     0   93M   0% /run/user/1000
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ sudo fdisk -l | tail -5
+
+Device         Boot  Start      End  Sectors  Size Id Type
+/dev/mmcblk0p1        8192   137215   129024   63M  c W95 FAT32 (LBA)
+/dev/mmcblk0p2      137216 62552063 62414848 29.8G 83 Linux
+
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ sudo blkid
+/dev/mmcblk0: PTUUID="96352956" PTTYPE="dos"
+/dev/mmcblk0p1: SEC_TYPE="msdos" LABEL="boot" UUID="2D2D-CD16" TYPE="vfat" PARTUUID="96352956-01"
+/dev/mmcblk0p2: UUID="2f840c69-cecb-4b10-87e4-01b9d28c231c" TYPE="ext4" PARTUUID="96352956-02"
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ lsblk
+NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+mmcblk0     179:0    0 29.8G  0 disk 
+├─mmcblk0p1 179:1    0   63M  0 part /boot
+└─mmcblk0p2 179:2    0 29.8G  0 part /
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ sudo parted -l
+Model: SD 00000 (sd/mmc)
+Disk /dev/mmcblk0: 32.0GB
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+Disk Flags: 
+
+Number  Start   End     Size    Type     File system  Flags
+ 1      4194kB  70.3MB  66.1MB  primary  fat16        lba
+ 2      70.3MB  32.0GB  32.0GB  primary  ext4
+
+
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ mount
+/dev/mmcblk0p2 on / type ext4 (rw,noatime,data=ordered)
+devtmpfs on /dev type devtmpfs (rw,relatime,size=469540k,nr_inodes=117385,mode=755)
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+proc on /proc type proc (rw,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,mode=755)
+tmpfs on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/lib/systemd/systemd-cgroups-agent,name=systemd)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)
+cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
+cgroup on /sys/fs/cgroup/net_cls type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=22,pgrp=1,timeout=300,minproto=5,maxproto=5,direct)
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+mqueue on /dev/mqueue type mqueue (rw,relatime)
+configfs on /sys/kernel/config type configfs (rw,relatime)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,relatime)
+/dev/mmcblk0p1 on /boot type vfat (rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,errors=remount-ro)
+tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,size=94776k,mode=700,uid=1000,gid=1000)
+gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime,user_id=1000,group_id=1000)
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ sudo service --status-all
+ [ - ]  alsa-utils
+ [ + ]  avahi-daemon
+ [ + ]  bluetooth
+ [ - ]  bootlogs
+ [ - ]  bootmisc.sh
+ [ - ]  checkfs.sh
+ [ - ]  checkroot-bootclean.sh
+ [ - ]  checkroot.sh
+ [ + ]  console-setup
+ [ + ]  cron
+ [ + ]  dbus
+ [ + ]  dhcpcd
+ [ + ]  dphys-swapfile
+ [ + ]  fake-hwclock
+ [ + ]  hdparm
+ [ - ]  hostname.sh
+ [ - ]  hwclock.sh
+ [ + ]  kbd
+ [ + ]  keyboard-setup
+ [ - ]  killprocs
+ [ + ]  kmod
+ [ + ]  lightdm
+ [ - ]  motd
+ [ - ]  mountall-bootclean.sh
+ [ - ]  mountall.sh
+ [ - ]  mountdevsubfs.sh
+ [ - ]  mountkernfs.sh
+ [ - ]  mountnfs-bootclean.sh
+ [ - ]  mountnfs.sh
+ [ + ]  networking
+ [ - ]  nfs-common
+ [ + ]  ntp
+ [ - ]  plymouth
+ [ - ]  plymouth-log
+ [ + ]  procps
+ [ + ]  raspi-config
+ [ + ]  rc.local
+ [ - ]  rmnologin
+ [ - ]  rpcbind
+ [ - ]  rsync
+ [ + ]  rsyslog
+ [ - ]  sendsigs
+ [ + ]  ssh
+ [ - ]  sudo
+ [ + ]  triggerhappy
+ [ + ]  udev
+ [ + ]  udev-finish
+ [ - ]  umountfs
+ [ - ]  umountnfs.sh
+ [ - ]  umountroot
+ [ + ]  urandom
+ [ - ]  x11-common
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ fbset
+
+mode "1920x1080"
+    geometry 1920 1080 1920 1080 16
+    timings 0 0 0 0 0 0 0
+    rgba 5/11,6/5,5/0,0/16
+endmode
+
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ xrandr
+xrandr: Failed to get size of gamma for output default
+Screen 0: minimum 1920 x 1080, current 1920 x 1080, maximum 1920 x 1080
+default connected 1920x1080+0+0 0mm x 0mm
+   1920x1080      0.00* 
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ tvservice -n
+device_name=DEL-DELL_S2340M
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ tvservice -s
+state 0x120006 [DVI DMT (82) RGB full 16:9], 1920x1080 @ 60.00Hz, progressive
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ tvservice -a
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ tvservice -m CEA && tvservice -m DMT
+Group CEA has 0 modes:
+Group DMT has 10 modes:
+           mode 4: 640x480 @ 60Hz 4:3, clock:25MHz progressive 
+           mode 6: 640x480 @ 75Hz 4:3, clock:31MHz progressive 
+           mode 9: 800x600 @ 60Hz 4:3, clock:40MHz progressive 
+           mode 11: 800x600 @ 75Hz 4:3, clock:49MHz progressive 
+           mode 16: 1024x768 @ 60Hz 4:3, clock:65MHz progressive 
+           mode 18: 1024x768 @ 75Hz 4:3, clock:78MHz progressive 
+           mode 21: 1152x864 @ 75Hz 4:3, clock:108MHz progressive 
+           mode 35: 1280x1024 @ 60Hz 5:4, clock:108MHz progressive 
+           mode 36: 1280x1024 @ 75Hz 5:4, clock:135MHz progressive 
+  (prefer) mode 82: 1920x1080 @ 60Hz 16:9, clock:148MHz progressive 
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ tvservice -d edid.dat
+Written 128 bytes to edid.dat
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ xxd -g l edid.dat
+0000000: 00ffffffffffff0010ac5ad054314432  ..........Z.T1D2
+0000010: 2217010380331d78eae295a2554f9f26  "....3.x....UO.&
+0000020: 115054a54b00714f8180d1c001010101  .PT.K.qO........
+0000030: 010101010101023a801871382d40582c  .......:..q8-@X,
+0000040: 4500fd1e1100001e000000ff00323933  E............293
+0000050: 4d3333384f324431540a000000fc0044  M338O2D1T......D
+0000060: 454c4c2053323334304d0a20000000fd  ELL S2340M. ....
+0000070: 00384c1e5311000a20202020202000bd  .8L.S...      ..
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ edidparser edid.dat
+Enabling fuzzy format match...
+Parsing edid.dat...
+HDMI:EDID version 1.3, 0 extensions, screen size 51x29 cm
+HDMI:EDID features - videodef 0x80 standby suspend active off; colour encoding:RGB444|YCbCr422; sRGB is not default colourspace; preferred format is native; does not support GTF
+HDMI:EDID found monitor S/N descriptor tag 0xff
+HDMI:EDID found monitor name descriptor tag 0xfc
+HDMI:EDID monitor name is DELL_S2340M
+HDMI:EDID found monitor range descriptor tag 0xfd
+HDMI:EDID monitor range offsets: V min=0, V max=0, H min=0, H max=0
+HDMI:EDID monitor range: vertical is 56-76 Hz, horizontal is 30-83 kHz, max pixel clock is 170 MHz
+HDMI:EDID monitor range does not support GTF
+HDMI:EDID found preferred CEA detail timing format: 1920x1080p @ 60 Hz (16)
+HDMI:EDID established timing I/II bytes are A5 4B 00
+HDMI:EDID found DMT format: code 4, 640x480p @ 60 Hz in established timing I/II
+HDMI:EDID found DMT format: code 6, 640x480p @ 75 Hz in established timing I/II
+HDMI:EDID found DMT format: code 9, 800x600p @ 60 Hz in established timing I/II
+HDMI:EDID found DMT format: code 11, 800x600p @ 75 Hz in established timing I/II
+HDMI:EDID found DMT format: code 16, 1024x768p @ 60 Hz in established timing I/II
+HDMI:EDID found DMT format: code 18, 1024x768p @ 75 Hz in established timing I/II
+HDMI:EDID found DMT format: code 36, 1280x1024p @ 75 Hz in established timing I/II
+HDMI:EDID standard timings block x 8: 0x714F 8180 D1C0 0101 0101 0101 0101 0101 
+HDMI:EDID found DMT format: code 21, 1152x864p @ 75 Hz (4:3) in standard timing 0
+HDMI:EDID found DMT format: code 35, 1280x1024p @ 60 Hz (5:4) in standard timing 1
+HDMI:EDID found DMT format: code 82, 1920x1080p @ 60 Hz (16:9) in standard timing 2
+HDMI:EDID moving support for CEA mode 16 to DMT mode 82 because sink does not support HDMI
+HDMI:EDID filtering formats with pixel clock > 162 MHz or h. blanking > 1023
+HDMI:EDID best score mode initialised to CEA (1) 640x480p @ 60 Hz with pixel clock 25 MHz (score 0)
+HDMI:EDID best score mode is now DMT (4) 640x480p @ 60 Hz with pixel clock 25 MHz (score 18432)
+HDMI:EDID best score mode is now DMT (6) 640x480p @ 75 Hz with pixel clock 31 MHz (score 23040)
+HDMI:EDID best score mode is now DMT (9) 800x600p @ 60 Hz with pixel clock 40 MHz (score 28800)
+HDMI:EDID best score mode is now DMT (11) 800x600p @ 75 Hz with pixel clock 49 MHz (score 36000)
+HDMI:EDID best score mode is now DMT (16) 1024x768p @ 60 Hz with pixel clock 65 MHz (score 47185)
+HDMI:EDID best score mode is now DMT (18) 1024x768p @ 75 Hz with pixel clock 78 MHz (score 58982)
+HDMI:EDID best score mode is now DMT (21) 1152x864p @ 75 Hz with pixel clock 108 MHz (score 99649)
+HDMI:EDID best score mode is now DMT (35) 1280x1024p @ 60 Hz with pixel clock 108 MHz (score 103643)
+HDMI:EDID DMT mode (36) 1280x1024p @ 75 Hz with pixel clock 135 MHz has a score of 98304
+HDMI:EDID best score mode is now DMT (82) 1920x1080p @ 60 Hz with pixel clock 148 MHz (score 149416)
+HDMI:EDID preferred mode is updated to DMT (82) 1920x1080p @ 60 Hz with pixel clock 148500000 Hz
+HDMI:EDID has only DVI support and no audio support
+edid_parser exited with code 0
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ cat /proc/sys/kernel/hostname
+dphrpi51
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ cat /proc/sys/kernel/ostype
+Linux
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ cat /proc/sys/kernel/osrelease
+4.4.11-v7+
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ cat /proc/sys/kernel/pid_max
+32768
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ cat /proc/sys/kernel/poweroff_cmd
+/sbin/poweroff
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ cat /proc/version
+Linux version 4.4.11-v7+ (dc4@dc4-XPS13-9333) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611) ) #888 SMP Mon May 23 20:10:33 BST 2016
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ cat /proc/meminfo
+MemTotal:         947748 kB
+MemFree:           89212 kB
+MemAvailable:     818896 kB
+Buffers:            3328 kB
+Cached:           707712 kB
+SwapCached:            0 kB
+Active:           344840 kB
+Inactive:         430004 kB
+Active(anon):      20936 kB
+Inactive(anon):    50776 kB
+Active(file):     323904 kB
+Inactive(file):   379228 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:        102396 kB
+SwapFree:         102396 kB
+Dirty:                24 kB
+Writeback:             0 kB
+AnonPages:         63756 kB
+Mapped:            56784 kB
+Shmem:              7816 kB
+Slab:              67316 kB
+SReclaimable:      57272 kB
+SUnreclaim:        10044 kB
+KernelStack:        1624 kB
+PageTables:         2228 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      576268 kB
+Committed_AS:     656008 kB
+VmallocTotal:    1114112 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+CmaTotal:           8192 kB
+CmaFree:            3732 kB
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ cat /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+Hardware	: BCM2709
+Revision	: a22082
+Serial		: 000000004d0d9199
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ cat /proc/cmdline
+8250.nr_uarts=0 dma.dmachans=0x7f35 bcm2708_fb.fbwidth=1920 bcm2708_fb.fbheight=1080 bcm2709.boardrev=0xa22082 bcm2709.serial=0x4d0d9199 smsc95xx.macaddr=B8:27:EB:0D:91:99 bcm2708_fb.fbswap=1 bcm2709.uart_clock=48000000 vc_mem.mem_base=0x3dc00000 vc_mem.mem_size=0x3f000000  dwc_otg.lpm_enable=0 console=ttyS0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ cat /proc/partitions
+major minor  #blocks  name
+
+   1        0       4096 ram0
+   1        1       4096 ram1
+   1        2       4096 ram2
+   1        3       4096 ram3
+   1        4       4096 ram4
+   1        5       4096 ram5
+   1        6       4096 ram6
+   1        7       4096 ram7
+   1        8       4096 ram8
+   1        9       4096 ram9
+   1       10       4096 ram10
+   1       11       4096 ram11
+   1       12       4096 ram12
+   1       13       4096 ram13
+   1       14       4096 ram14
+   1       15       4096 ram15
+ 179        0   31276032 mmcblk0
+ 179        1      64512 mmcblk0p1
+ 179        2   31207424 mmcblk0p2
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ ls -latr /
+total 92
+dr-xr-xr-x 154 root root     0 Dec 31  1969 proc
+dr-xr-xr-x  12 root root     0 Dec 31  1969 sys
+drwx------   2 root root  4096 May 27 07:04 root
+drwxr-xr-x   2 root root  4096 May 27 07:04 mnt
+drwxr-xr-x   2 root root  4096 May 27 07:04 srv
+drwxr-xr-x   2 root root  4096 May 27 07:04 media
+drwxr-xr-x   3 root root  4096 May 27 07:09 home
+drwxr-xr-x   2 root root  4096 May 27 07:22 bin
+drwxr-xr-x  19 root root  4096 May 27 07:22 lib
+drwxr-xr-x  11 root root  4096 May 27 07:34 usr
+drwxr-xr-x   7 root root  4096 May 27 07:36 opt
+drwx------   2 root root 16384 May 27 07:43 lost+found
+drwxr-xr-x  21 root root  4096 May 27 07:50 ..
+drwxr-xr-x  21 root root  4096 May 27 07:50 .
+drwxr-xr-x  11 root root  4096 May 27 07:50 var
+drwxr-xr-x  14 root root  3380 Sep 12 11:13 dev
+drwxr-xr-x   2 root root  4096 Sep 12 11:26 sbin
+drwxr-xr-x   3 root root 16384 Sep 12 12:01 boot
+drwxr-xr-x 110 root root  4096 Sep 12 12:01 etc
+drwxrwxrwt  12 root root  4096 Sep 12 13:07 tmp
+drwxr-xr-x  23 root root   780 Sep 12 13:07 run
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ ls -latr /boot
+total 20324
+-rwxr-xr-x  1 root root     136 Dec 31  1979 cmdline.txt
+drwxr-xr-x 21 root root    4096 May 27 07:50 ..
+-rwxr-xr-x  1 root root    1635 May 27 08:09 config.txt
+-rwxr-xr-x  1 root root   18974 May 27 08:50 LICENSE.oracle
+-rwxr-xr-x  1 root root     145 May 27 08:50 issue.txt
+-rwxr-xr-x  1 root root   13484 Sep 12 12:00 bcm2708-rpi-b-plus.dtb
+-rwxr-xr-x  1 root root   13221 Sep 12 12:00 bcm2708-rpi-b.dtb
+-rwxr-xr-x  1 root root   14567 Sep 12 12:00 bcm2709-rpi-2-b.dtb
+-rwxr-xr-x  1 root root   13257 Sep 12 12:00 bcm2708-rpi-cm.dtb
+-rwxr-xr-x  1 root root   15237 Sep 12 12:00 bcm2710-rpi-3-b.dtb
+-rwxr-xr-x  1 root root 4123112 Sep 12 12:00 kernel.img
+-rwxr-xr-x  1 root root 4224232 Sep 12 12:00 kernel7.img
+-rwxr-xr-x  1 root root   18693 Sep 12 12:00 COPYING.linux
+drwxr-xr-x  2 root root    8192 Sep 12 12:01 overlays
+-rwxr-xr-x  1 root root 2746552 Sep 12 12:01 start.elf
+-rwxr-xr-x  1 root root  617432 Sep 12 12:01 start_cd.elf
+-rwxr-xr-x  1 root root 4926264 Sep 12 12:01 start_db.elf
+-rwxr-xr-x  1 root root 3877720 Sep 12 12:01 start_x.elf
+-rwxr-xr-x  1 root root    6482 Sep 12 12:01 fixup.dat
+-rwxr-xr-x  1 root root    2504 Sep 12 12:01 fixup_cd.dat
+-rwxr-xr-x  1 root root    9717 Sep 12 12:01 fixup_x.dat
+-rwxr-xr-x  1 root root    9717 Sep 12 12:01 fixup_db.dat
+-rwxr-xr-x  1 root root   17932 Sep 12 12:01 bootcode.bin
+-rwxr-xr-x  1 root root    1494 Sep 12 12:01 LICENCE.broadcom
+drwxr-xr-x  3 root root   16384 Sep 12 12:01 .
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ ls -latr /etc/ssh
+total 288
+-rw-r--r--   1 root root   1690 Apr 15 18:58 ssh_config
+-rw-r--r--   1 root root 242091 Apr 15 18:58 moduli
+-rw-r--r--   1 root root   2541 May 27 07:13 sshd_config
+-rw-r--r--   1 root root    606 May 27 07:50 ssh_host_dsa_key.pub
+-rw-------   1 root root    668 May 27 07:50 ssh_host_dsa_key
+-rw-r--r--   1 root root    398 May 27 07:50 ssh_host_rsa_key.pub
+-rw-------   1 root root   1679 May 27 07:50 ssh_host_rsa_key
+-rw-r--r--   1 root root    178 May 27 07:50 ssh_host_ecdsa_key.pub
+-rw-------   1 root root    227 May 27 07:50 ssh_host_ecdsa_key
+-rw-r--r--   1 root root     98 May 27 07:50 ssh_host_ed25519_key.pub
+-rw-------   1 root root    411 May 27 07:50 ssh_host_ed25519_key
+drwxr-xr-x   2 root root   4096 Sep 12 12:00 .
+drwxr-xr-x 110 root root   4096 Sep 12 12:01 ..
+pi@dphrpi51:~ $ 
+pi@dphrpi51:~ $ ls -latr ~
+total 120
+drwxr-xr-x  3 root root 4096 May 27 07:09 ..
+-rw-r--r--  1 pi   pi    675 May 27 07:09 .profile
+-rw-r--r--  1 pi   pi   3512 May 27 07:09 .bashrc
+-rw-r--r--  1 pi   pi    220 May 27 07:09 .bash_logout
+drwxr-xr-x  2 pi   pi   4096 May 27 07:40 python_games
+drwxr-xr-x  5 pi   pi   4096 May 27 07:40 Documents
+drwxr-xr-x  3 pi   pi   4096 May 27 07:40 .local
+drwxr-xr-x  2 pi   pi   4096 May 27 07:40 Desktop
+drwxr-xr-x  3 pi   pi   4096 May 27 07:40 .themes
+drwxr-xr-x  2 pi   pi   4096 May 27 07:50 Videos
+drwxr-xr-x  2 pi   pi   4096 May 27 07:50 Templates
+drwxr-xr-x  2 pi   pi   4096 May 27 07:50 Public
+drwxr-xr-x  2 pi   pi   4096 May 27 07:50 Pictures
+drwxr-xr-x  2 pi   pi   4096 May 27 07:50 Music
+drwxr-xr-x  2 pi   pi   4096 May 27 07:50 Downloads
+drwx------  3 pi   pi   4096 May 27 07:50 .dbus
+drwxr-xr-x  2 pi   pi   4096 May 27 07:50 .fontconfig
+drwxr-xr-x  6 pi   pi   4096 May 27 07:50 .cache
+drwxr-xr-x  2 pi   pi   4096 May 27 07:50 .gstreamer-0.10
+-rw-r--r--  1 pi   pi     69 Sep 12 11:07 .asoundrc
+-rw-------  1 pi   pi    353 Sep 12 11:11 .xsession-errors.old
+-rw-------  1 pi   pi    109 Sep 12 11:13 .Xauthority
+-rw-------  1 pi   pi    353 Sep 12 11:13 .xsession-errors
+drwxr-xr-x  9 pi   pi   4096 Sep 12 11:14 .config
+-rw-r--r--  1 pi   pi     66 Sep 12 13:05 .gitconfig
+drwxr-xr-x  3 pi   pi   4096 Sep 12 13:06 g2projects
+-rwxr-xr-x  1 pi   pi   1042 Sep 12 13:06 raspinfo.sh
+drwxr-xr-x  2 pi   pi   4096 Sep 12 13:07 .oracle_jre_usage
+drwxr-xr-x 20 pi   pi   4096 Sep 12 13:07 .
+-rw-r--r--  1 pi   pi    128 Sep 12 13:07 edid.dat
+pi@dphrpi51:~ $ 
+
