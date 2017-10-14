@@ -1,0 +1,630 @@
+pi@dphrpi100:~/raspinfo/dphrpi100 $ date
+Sat 14 Oct 10:49:38 EDT 2017
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ uptime
+ 10:49:38 up 8 min,  2 users,  load average: 0.28, 0.42, 0.31
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ hostname
+dphrpi100
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ hostname -I
+10.0.0.132 2601:5cc:c800:1c59::cfa7 2601:5cc:c800:1c59:9d6e:652a:5cb1:ab30 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ uname -a
+Linux dphrpi100 4.9.41+ #1023 Tue Aug 8 15:47:12 BST 2017 armv6l GNU/Linux
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ cat /proc/cpuinfo | tail -3
+Hardware	: BCM2835
+Revision	: 9000c1
+Serial		: 0000000068bd6366
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Raspbian
+Description:	Raspbian GNU/Linux 9.1 (stretch)
+Release:	9.1
+Codename:	stretch
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ lscpu
+Architecture:          armv6l
+Byte Order:            Little Endian
+CPU(s):                1
+On-line CPU(s) list:   0
+Thread(s) per core:    1
+Core(s) per socket:    1
+Socket(s):             1
+Model:                 7
+Model name:            ARMv6-compatible processor rev 7 (v6l)
+CPU max MHz:           1000.0000
+CPU min MHz:           700.0000
+BogoMIPS:              997.08
+Flags:                 half thumb fastmult vfp edsp java tls
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ vcgencmd version
+Aug  8 2017 12:01:57 
+Copyright (c) 2012 Broadcom
+version 196063438d7bb0769861c86f948ae653727adb7e (clean) (release)
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ vcgencmd get_lcd_info
+1920 1080 24
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ vcgencmd measure_temp
+temp=42.2'C
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ vcgencmd get_mem arm && vcgencmd get_mem gpu
+arm=448M
+gpu=64M
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ java -version
+java version "1.8.0_65"
+Java(TM) SE Runtime Environment (build 1.8.0_65-b17)
+Java HotSpot(TM) Client VM (build 25.65-b01, mixed mode)
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ javac -version
+javac 1.8.0_65
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ gcc --version
+gcc (Raspbian 6.3.0-18+rpi1) 6.3.0 20170516
+Copyright (C) 2016 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ ruby -v
+ruby 2.3.3p222 (2016-11-21) [arm-linux-gnueabihf]
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ rvm --version
+bash: rvm: command not found
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ python -V
+Python 2.7.13
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ python2 -V
+Python 2.7.13
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ python3 -V
+Python 3.5.3
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ node -v
+v4.8.2
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ npm -v
+bash: npm: command not found
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ git --version
+git version 2.11.0
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ iwconfig
+wlan0     IEEE 802.11  ESSID:off/any  
+          Mode:Managed  Access Point: Not-Associated   Tx-Power=31 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:on
+          
+eth0      no wireless extensions.
+
+lo        no wireless extensions.
+
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.132  netmask 255.255.255.0  broadcast 10.0.0.255
+        inet6 2601:5cc:c800:1c59:9d6e:652a:5cb1:ab30  prefixlen 64  scopeid 0x0<global>
+        inet6 fe80::d973:7f5:f0ce:6100  prefixlen 64  scopeid 0x20<link>
+        inet6 2601:5cc:c800:1c59::cfa7  prefixlen 128  scopeid 0x0<global>
+        ether 00:0e:ba:01:a4:62  txqueuelen 1000  (Ethernet)
+        RX packets 734  bytes 638393 (623.4 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 190  bytes 19515 (19.0 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlan0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether b8:27:eb:e8:36:33  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ netstat -rn
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+0.0.0.0         10.0.0.1        0.0.0.0         UG        0 0          0 eth0
+10.0.0.0        0.0.0.0         255.255.255.0   U         0 0          0 eth0
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ lsusb --version
+lsusb (usbutils) 007
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ lsusb
+Bus 001 Device 006: ID 1c4f:0065 SiGma Micro 
+Bus 001 Device 004: ID 1c4f:0027 SiGma Micro 
+Bus 001 Device 003: ID 0b95:772a ASIX Electronics Corp. AX88772A Fast Ethernet
+Bus 001 Device 002: ID 1a40:0101 Terminus Technology Inc. Hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ lsusb | sort
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 1a40:0101 Terminus Technology Inc. Hub
+Bus 001 Device 003: ID 0b95:772a ASIX Electronics Corp. AX88772A Fast Ethernet
+Bus 001 Device 004: ID 1c4f:0027 SiGma Micro 
+Bus 001 Device 006: ID 1c4f:0065 SiGma Micro 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ lsusb -t
+/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=dwc_otg/1p, 480M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 480M
+        |__ Port 1: Dev 3, If 0, Class=Vendor Specific Class, Driver=asix, 480M
+        |__ Port 2: Dev 4, If 0, Class=Human Interface Device, Driver=usbhid, 1.5M
+        |__ Port 2: Dev 4, If 1, Class=Human Interface Device, Driver=usbhid, 1.5M
+        |__ Port 4: Dev 6, If 0, Class=Human Interface Device, Driver=usbhid, 1.5M
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ free -o
+free: invalid option -- 'o'
+
+Usage:
+ free [options]
+
+Options:
+ -b, --bytes         show output in bytes
+     --kilo          show output in kilobytes
+     --mega          show output in megabytes
+     --giga          show output in gigabytes
+     --tera          show output in terabytes
+     --peta          show output in petabytes
+ -k, --kibi          show output in kibibytes
+ -m, --mebi          show output in mebibytes
+ -g, --gibi          show output in gibibytes
+     --tebi          show output in tebibytes
+     --pebi          show output in pebibytes
+ -h, --human         show human-readable output
+     --si            use powers of 1000 not 1024
+ -l, --lohi          show detailed low and high memory statistics
+ -t, --total         show total for RAM + swap
+ -s N, --seconds N   repeat printing every N seconds
+ -c N, --count N     repeat printing N times, then exit
+ -w, --wide          wide output
+
+     --help     display this help and exit
+ -V, --version  output version information and exit
+
+For more details see free(1).
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ free -o -h
+free: invalid option -- 'o'
+
+Usage:
+ free [options]
+
+Options:
+ -b, --bytes         show output in bytes
+     --kilo          show output in kilobytes
+     --mega          show output in megabytes
+     --giga          show output in gigabytes
+     --tera          show output in terabytes
+     --peta          show output in petabytes
+ -k, --kibi          show output in kibibytes
+ -m, --mebi          show output in mebibytes
+ -g, --gibi          show output in gibibytes
+     --tebi          show output in tebibytes
+     --pebi          show output in pebibytes
+ -h, --human         show human-readable output
+     --si            use powers of 1000 not 1024
+ -l, --lohi          show detailed low and high memory statistics
+ -t, --total         show total for RAM + swap
+ -s N, --seconds N   repeat printing every N seconds
+ -c N, --count N     repeat printing N times, then exit
+ -w, --wide          wide output
+
+     --help     display this help and exit
+ -V, --version  output version information and exit
+
+For more details see free(1).
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ df -k
+Filesystem     1K-blocks    Used Available Use% Mounted on
+/dev/root       15291056 4241436  10365608  30% /
+devtmpfs          217964       0    217964   0% /dev
+tmpfs             222260       0    222260   0% /dev/shm
+tmpfs             222260    3240    219020   2% /run
+tmpfs               5120       4      5116   1% /run/lock
+tmpfs             222260       0    222260   0% /sys/fs/cgroup
+/dev/mmcblk0p1     42137   21474     20663  51% /boot
+tmpfs              44452       0     44452   0% /run/user/1000
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        15G  4.1G  9.9G  30% /
+devtmpfs        213M     0  213M   0% /dev
+tmpfs           218M     0  218M   0% /dev/shm
+tmpfs           218M  3.2M  214M   2% /run
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           218M     0  218M   0% /sys/fs/cgroup
+/dev/mmcblk0p1   42M   21M   21M  51% /boot
+tmpfs            44M     0   44M   0% /run/user/1000
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ sudo fdisk -l | tail -5
+Disk identifier: 0xe0a82068
+
+Device         Boot Start      End  Sectors  Size Id Type
+/dev/mmcblk0p1       8192    93814    85623 41.8M  c W95 FAT32 (LBA)
+/dev/mmcblk0p2      94208 31291391 31197184 14.9G 83 Linux
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ sudo blkid
+/dev/mmcblk0p1: LABEL="boot" UUID="E5B7-FEA1" TYPE="vfat" PARTUUID="e0a82068-01"
+/dev/mmcblk0p2: UUID="b4ea8e46-fe87-4ddd-9e94-506c37005ac5" TYPE="ext4" PARTUUID="e0a82068-02"
+/dev/mmcblk0: PTUUID="e0a82068" PTTYPE="dos"
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ lsblk
+NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+mmcblk0     179:0    0 14.9G  0 disk 
+├─mmcblk0p1 179:1    0 41.8M  0 part /boot
+└─mmcblk0p2 179:2    0 14.9G  0 part /
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ sudo parted -l
+Model: SD 00000 (sd/mmc)
+Disk /dev/mmcblk0: 16.0GB
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+Disk Flags: 
+
+Number  Start   End     Size    Type     File system  Flags
+ 1      4194kB  48.0MB  43.8MB  primary  fat32        lba
+ 2      48.2MB  16.0GB  16.0GB  primary  ext4
+
+
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ mount
+/dev/mmcblk0p2 on / type ext4 (rw,noatime,data=ordered)
+devtmpfs on /dev type devtmpfs (rw,relatime,size=217964k,nr_inodes=54491,mode=755)
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+proc on /proc type proc (rw,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,mode=755)
+tmpfs on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/lib/systemd/systemd-cgroups-agent,name=systemd)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
+cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
+cgroup on /sys/fs/cgroup/net_cls type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=28,pgrp=1,timeout=0,minproto=5,maxproto=5,direct)
+mqueue on /dev/mqueue type mqueue (rw,relatime)
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+sunrpc on /run/rpc_pipefs type rpc_pipefs (rw,relatime)
+configfs on /sys/kernel/config type configfs (rw,relatime)
+/dev/mmcblk0p1 on /boot type vfat (rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,errors=remount-ro)
+tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,size=44452k,mode=700,uid=1000,gid=1000)
+gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime,user_id=1000,group_id=1000)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,relatime)
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ sudo service --status-all
+ [ - ]  alsa-utils
+ [ + ]  avahi-daemon
+ [ + ]  bluetooth
+ [ - ]  console-setup.sh
+ [ + ]  cron
+ [ + ]  dbus
+ [ + ]  dhcpcd
+ [ + ]  dphys-swapfile
+ [ + ]  fake-hwclock
+ [ - ]  hwclock.sh
+ [ - ]  keyboard-setup.sh
+ [ + ]  kmod
+ [ + ]  lightdm
+ [ + ]  networking
+ [ - ]  nfs-common
+ [ - ]  paxctld
+ [ - ]  plymouth
+ [ - ]  plymouth-log
+ [ + ]  procps
+ [ + ]  raspi-config
+ [ - ]  rpcbind
+ [ - ]  rsync
+ [ + ]  rsyslog
+ [ + ]  ssh
+ [ - ]  sudo
+ [ + ]  triggerhappy
+ [ + ]  udev
+ [ - ]  x11-common
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ fbset
+
+mode "1920x1080"
+    geometry 1920 1080 1920 1080 32
+    timings 0 0 0 0 0 0 0
+    rgba 8/16,8/8,8/0,8/24
+endmode
+
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ xrandr
+xrandr: Failed to get size of gamma for output default
+Screen 0: minimum 1920 x 1080, current 1920 x 1080, maximum 1920 x 1080
+default connected 1920x1080+0+0 0mm x 0mm
+   1920x1080      0.00* 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ tvservice -n
+device_name=DEL-DELL_S2340M
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ tvservice -s
+state 0x120006 [DVI DMT (82) RGB full 16:9], 1920x1080 @ 60.00Hz, progressive
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ tvservice -a
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ tvservice -m CEA && tvservice -m DMT
+Group CEA has 0 modes:
+Group DMT has 10 modes:
+           mode 4: 640x480 @ 60Hz 4:3, clock:25MHz progressive 
+           mode 6: 640x480 @ 75Hz 4:3, clock:31MHz progressive 
+           mode 9: 800x600 @ 60Hz 4:3, clock:40MHz progressive 
+           mode 11: 800x600 @ 75Hz 4:3, clock:49MHz progressive 
+           mode 16: 1024x768 @ 60Hz 4:3, clock:65MHz progressive 
+           mode 18: 1024x768 @ 75Hz 4:3, clock:78MHz progressive 
+           mode 21: 1152x864 @ 75Hz 4:3, clock:108MHz progressive 
+           mode 35: 1280x1024 @ 60Hz 5:4, clock:108MHz progressive 
+           mode 36: 1280x1024 @ 75Hz 5:4, clock:135MHz progressive 
+  (prefer) mode 82: 1920x1080 @ 60Hz 16:9, clock:148MHz progressive 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ tvservice -d edid.dat
+Written 128 bytes to edid.dat
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ xxd -g l edid.dat
+00000000: 00ffffffffffff0010ac5ad054314432  ..........Z.T1D2
+00000010: 2217010380331d78eae295a2554f9f26  "....3.x....UO.&
+00000020: 115054a54b00714f8180d1c001010101  .PT.K.qO........
+00000030: 010101010101023a801871382d40582c  .......:..q8-@X,
+00000040: 4500fd1e1100001e000000ff00323933  E............293
+00000050: 4d3333384f324431540a000000fc0044  M338O2D1T......D
+00000060: 454c4c2053323334304d0a20000000fd  ELL S2340M. ....
+00000070: 00384c1e5311000a20202020202000bd  .8L.S...      ..
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ edidparser edid.dat
+Enabling fuzzy format match...
+Parsing edid.dat...
+HDMI:EDID version 1.3, 0 extensions, screen size 51x29 cm
+HDMI:EDID features - videodef 0x80 standby suspend active off; colour encoding:RGB444|YCbCr422; sRGB is not default colourspace; preferred format is native; does not support GTF
+HDMI:EDID found monitor S/N descriptor tag 0xff
+HDMI:EDID found monitor name descriptor tag 0xfc
+HDMI:EDID monitor name is DELL_S2340M
+HDMI:EDID found monitor range descriptor tag 0xfd
+HDMI:EDID monitor range offsets: V min=0, V max=0, H min=0, H max=0
+HDMI:EDID monitor range: vertical is 56-76 Hz, horizontal is 30-83 kHz, max pixel clock is 170 MHz
+HDMI:EDID monitor range does not support GTF
+HDMI:EDID found preferred CEA detail timing format: 1920x1080p @ 60 Hz (16)
+HDMI:EDID established timing I/II bytes are A5 4B 00
+HDMI:EDID found DMT format: code 4, 640x480p @ 60 Hz in established timing I/II
+HDMI:EDID found DMT format: code 6, 640x480p @ 75 Hz in established timing I/II
+HDMI:EDID found DMT format: code 9, 800x600p @ 60 Hz in established timing I/II
+HDMI:EDID found DMT format: code 11, 800x600p @ 75 Hz in established timing I/II
+HDMI:EDID found DMT format: code 16, 1024x768p @ 60 Hz in established timing I/II
+HDMI:EDID found DMT format: code 18, 1024x768p @ 75 Hz in established timing I/II
+HDMI:EDID found DMT format: code 36, 1280x1024p @ 75 Hz in established timing I/II
+HDMI:EDID standard timings block x 8: 0x714F 8180 D1C0 0101 0101 0101 0101 0101 
+HDMI:EDID found DMT format: code 21, 1152x864p @ 75 Hz (4:3) in standard timing 0
+HDMI:EDID found DMT format: code 35, 1280x1024p @ 60 Hz (5:4) in standard timing 1
+HDMI:EDID found DMT format: code 82, 1920x1080p @ 60 Hz (16:9) in standard timing 2
+HDMI:EDID moving support for CEA mode 16 to DMT mode 82 because sink does not support HDMI
+HDMI:EDID filtering formats with pixel clock > 162 MHz or h. blanking > 1023
+HDMI:EDID best score mode initialised to CEA (1) 640x480p @ 60 Hz with pixel clock 25 MHz (score 0)
+HDMI:EDID best score mode is now DMT (4) 640x480p @ 60 Hz with pixel clock 25 MHz (score 18432)
+HDMI:EDID best score mode is now DMT (6) 640x480p @ 75 Hz with pixel clock 31 MHz (score 23040)
+HDMI:EDID best score mode is now DMT (9) 800x600p @ 60 Hz with pixel clock 40 MHz (score 28800)
+HDMI:EDID best score mode is now DMT (11) 800x600p @ 75 Hz with pixel clock 49 MHz (score 36000)
+HDMI:EDID best score mode is now DMT (16) 1024x768p @ 60 Hz with pixel clock 65 MHz (score 47185)
+HDMI:EDID best score mode is now DMT (18) 1024x768p @ 75 Hz with pixel clock 78 MHz (score 58982)
+HDMI:EDID best score mode is now DMT (21) 1152x864p @ 75 Hz with pixel clock 108 MHz (score 99649)
+HDMI:EDID best score mode is now DMT (35) 1280x1024p @ 60 Hz with pixel clock 108 MHz (score 103643)
+HDMI:EDID DMT mode (36) 1280x1024p @ 75 Hz with pixel clock 135 MHz has a score of 98304
+HDMI:EDID best score mode is now DMT (82) 1920x1080p @ 60 Hz with pixel clock 148 MHz (score 149416)
+HDMI:EDID preferred mode is updated to DMT (82) 1920x1080p @ 60 Hz with pixel clock 148500000 Hz
+HDMI:EDID has only DVI support and no audio support
+edid_parser exited with code 0
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ cat /proc/sys/kernel/hostname
+dphrpi100
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ cat /proc/sys/kernel/ostype
+Linux
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ cat /proc/sys/kernel/osrelease
+4.9.41+
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ cat /proc/sys/kernel/pid_max
+32768
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ cat /proc/sys/kernel/poweroff_cmd
+/sbin/poweroff
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ cat /proc/version
+Linux version 4.9.41+ (dc4@dc4-XPS13-9333) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611) ) #1023 Tue Aug 8 15:47:12 BST 2017
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ cat /proc/meminfo
+MemTotal:         444524 kB
+MemFree:          156548 kB
+MemAvailable:     302000 kB
+Buffers:            2552 kB
+Cached:           187112 kB
+SwapCached:            0 kB
+Active:           131568 kB
+Inactive:         129304 kB
+Active(anon):      37448 kB
+Inactive(anon):    37552 kB
+Active(file):      94120 kB
+Inactive(file):    91752 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:        102396 kB
+SwapFree:         102396 kB
+Dirty:                40 kB
+Writeback:             0 kB
+AnonPages:         71220 kB
+Mapped:            58260 kB
+Shmem:              3796 kB
+Slab:              16052 kB
+SReclaimable:       9268 kB
+SUnreclaim:         6784 kB
+KernelStack:        1352 kB
+PageTables:         2264 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      324656 kB
+Committed_AS:     667184 kB
+VmallocTotal:     573440 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+CmaTotal:           8192 kB
+CmaFree:             108 kB
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ cat /proc/cpuinfo
+processor	: 0
+model name	: ARMv6-compatible processor rev 7 (v6l)
+BogoMIPS	: 997.08
+Features	: half thumb fastmult vfp edsp java tls 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xb76
+CPU revision	: 7
+
+Hardware	: BCM2835
+Revision	: 9000c1
+Serial		: 0000000068bd6366
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ cat /proc/cmdline
+8250.nr_uarts=0 bcm2708_fb.fbwidth=1920 bcm2708_fb.fbheight=1080 bcm2708_fb.fbswap=1 smsc95xx.macaddr=B8:27:EB:BD:63:66 vc_mem.mem_base=0x1ec00000 vc_mem.mem_size=0x20000000  dwc_otg.lpm_enable=0 console=ttyS0,115200 console=tty1 root=PARTUUID=e0a82068-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ cat /proc/partitions
+major minor  #blocks  name
+
+   1        0       4096 ram0
+   1        1       4096 ram1
+   1        2       4096 ram2
+   1        3       4096 ram3
+   1        4       4096 ram4
+   1        5       4096 ram5
+   1        6       4096 ram6
+   1        7       4096 ram7
+   1        8       4096 ram8
+   1        9       4096 ram9
+   1       10       4096 ram10
+   1       11       4096 ram11
+   1       12       4096 ram12
+   1       13       4096 ram13
+   1       14       4096 ram14
+   1       15       4096 ram15
+ 179        0   15645696 mmcblk0
+ 179        1      42811 mmcblk0p1
+ 179        2   15598592 mmcblk0p2
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ ls -latr /
+total 83
+drwxr-xr-x   4 root root  2560 Dec 31  1969 boot
+dr-xr-xr-x 129 root root     0 Dec 31  1969 proc
+dr-xr-xr-x  12 root root     0 Dec 31  1969 sys
+drwxr-xr-x   2 root root  4096 Sep  7 10:44 mnt
+drwxr-xr-x   2 root root  4096 Sep  7 10:44 srv
+drwxr-xr-x   2 root root  4096 Sep  7 10:44 media
+drwxr-xr-x   3 root root  4096 Sep  7 10:59 home
+drwxr-xr-x  16 root root  4096 Sep  7 11:13 lib
+drwxr-xr-x   2 root root  4096 Sep  7 11:18 bin
+drwxr-xr-x   2 root root  4096 Sep  7 11:18 sbin
+drwxr-xr-x  11 root root  4096 Sep  7 11:34 usr
+drwxr-xr-x   3 root root  4096 Sep  7 11:36 man
+drwxr-xr-x   7 root root  4096 Sep  7 11:53 opt
+drwx------   2 root root 16384 Sep  7 12:05 lost+found
+drwxr-xr-x  22 root root  4096 Sep  7 12:12 ..
+drwxr-xr-x  22 root root  4096 Sep  7 12:12 .
+drwxr-xr-x  11 root root  4096 Sep  7 12:12 var
+drwx------   4 root root  4096 Sep  7 12:12 root
+drwxr-xr-x 111 root root  4096 Oct 10 06:32 etc
+drwxr-xr-x  14 root root  3380 Oct 12 06:17 dev
+drwxrwxrwt  12 root root  4096 Oct 14 10:49 tmp
+drwxr-xr-x  28 root root   820 Oct 14 10:49 run
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ ls -latr /boot
+total 21204
+drwxr-xr-x  4 root root    2560 Dec 31  1969 .
+-rwxr-xr-x  1 root root     187 Dec 31  1979 cmdline.txt
+-rwxr-xr-x  1 root root   18693 Aug 21  2015 COPYING.linux
+-rwxr-xr-x  1 root root    1494 Nov 18  2015 LICENCE.broadcom
+-rwxr-xr-x  1 root root   16380 May 15 15:09 bcm2710-rpi-cm3.dtb
+-rwxr-xr-x  1 root root   17624 May 15 15:09 bcm2710-rpi-3-b.dtb
+-rwxr-xr-x  1 root root   16523 May 15 15:09 bcm2709-rpi-2-b.dtb
+-rwxr-xr-x  1 root root   14916 May 15 15:09 bcm2708-rpi-cm.dtb
+-rwxr-xr-x  1 root root   15456 May 15 15:09 bcm2708-rpi-b-plus.dtb
+-rwxr-xr-x  1 root root   15197 May 15 15:09 bcm2708-rpi-b.dtb
+-rwxr-xr-x  1 root root   15660 May 15 15:09 bcm2708-rpi-0-w.dtb
+-rwxr-xr-x  1 root root 2868132 Aug 11 13:03 start.elf
+-rwxr-xr-x  1 root root  666404 Aug 11 13:03 start_cd.elf
+-rwxr-xr-x  1 root root 4381216 Aug 11 13:03 kernel.img
+-rwxr-xr-x  1 root root 4581064 Aug 11 13:03 kernel7.img
+-rwxr-xr-x  1 root root    9830 Aug 11 13:03 fixup_x.dat
+-rwxr-xr-x  1 root root    9834 Aug 11 13:03 fixup_db.dat
+-rwxr-xr-x  1 root root    6688 Aug 11 13:03 fixup.dat
+-rwxr-xr-x  1 root root    2594 Aug 11 13:03 fixup_cd.dat
+-rwxr-xr-x  1 root root   50248 Aug 11 13:03 bootcode.bin
+-rwxr-xr-x  1 root root 3952100 Aug 11 13:03 start_x.elf
+-rwxr-xr-x  1 root root 5007204 Aug 11 13:03 start_db.elf
+drwxr-xr-x  2 root root   10240 Sep  7 10:58 overlays
+-rwxr-xr-x  1 root root   18974 Sep  7 12:11 LICENSE.oracle
+-rwxr-xr-x  1 root root     145 Sep  7 12:11 issue.txt
+drwxr-xr-x 22 root root    4096 Sep  7 12:12 ..
+drwxr-xr-x  2 root root     512 Oct  9 14:25 System Volume Information
+-rwxr-xr-x  1 root root    1588 Oct 10 06:12 config.txt
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ ls -latr /etc/ssh
+total 592
+-rw-r--r--   1 root root   3298 Jun 17 20:11 sshd_config
+-rw-r--r--   1 root root   1723 Jun 17 20:11 ssh_config
+-rw-r--r--   1 root root 553122 Jun 17 20:11 moduli
+-rw-r--r--   1 root root    398 Sep  7 12:12 ssh_host_rsa_key.pub
+-rw-------   1 root root   1675 Sep  7 12:12 ssh_host_rsa_key
+-rw-------   1 root root    668 Sep  7 12:12 ssh_host_dsa_key
+-rw-r--r--   1 root root    606 Sep  7 12:12 ssh_host_dsa_key.pub
+-rw-r--r--   1 root root    178 Sep  7 12:12 ssh_host_ecdsa_key.pub
+-rw-------   1 root root    227 Sep  7 12:12 ssh_host_ecdsa_key
+-rw-r--r--   1 root root     98 Sep  7 12:12 ssh_host_ed25519_key.pub
+-rw-------   1 root root    411 Sep  7 12:12 ssh_host_ed25519_key
+drwxr-xr-x   2 root root   4096 Sep  7 12:12 .
+drwxr-xr-x 111 root root   4096 Oct 10 06:32 ..
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+pi@dphrpi100:~/raspinfo/dphrpi100 $ ls -latr ~
+total 104
+drwxr-xr-x  3 root root 4096 Sep  7 10:59 ..
+-rw-r--r--  1 pi   pi    675 Sep  7 10:59 .profile
+-rw-r--r--  1 pi   pi   3523 Sep  7 10:59 .bashrc
+-rw-r--r--  1 pi   pi    220 Sep  7 10:59 .bash_logout
+drwxr-xr-x  2 pi   pi   4096 Sep  7 11:45 python_games
+drwxr-xr-x  5 pi   pi   4096 Sep  7 11:45 Documents
+drwxr-xr-x  3 pi   pi   4096 Sep  7 11:45 .local
+drwxr-xr-x  2 pi   pi   4096 Sep  7 12:12 Videos
+drwxr-xr-x  2 pi   pi   4096 Sep  7 12:12 Templates
+drwxr-xr-x  2 pi   pi   4096 Sep  7 12:12 Public
+drwxr-xr-x  2 pi   pi   4096 Sep  7 12:12 Pictures
+drwxr-xr-x  2 pi   pi   4096 Sep  7 12:12 Music
+drwxr-xr-x  2 pi   pi   4096 Sep  7 12:12 Downloads
+drwxr-xr-x  2 pi   pi   4096 Sep  7 12:12 Desktop
+drwx------  3 pi   pi   4096 Sep  7 12:12 .gnupg
+drwxr-xr-x  3 pi   pi   4096 Sep  7 12:12 .themes
+drwx------  3 pi   pi   4096 Oct 10 06:08 .pki
+drwxr-xr-x  6 pi   pi   4096 Oct 10 06:08 .cache
+drwx------ 12 pi   pi   4096 Oct 10 06:33 .config
+-rw-------  1 pi   pi   4055 Oct 10 06:35 .xsession-errors.old
+drwxr-xr-x  2 pi   pi   4096 Oct 12 06:08 .oracle_jre_usage
+-rw-------  1 pi   pi    471 Oct 12 06:16 .bash_history
+-rw-------  1 pi   pi    110 Oct 12 06:17 .Xauthority
+-rw-------  1 pi   pi   4055 Oct 12 06:17 .xsession-errors
+drwxr-xr-x 19 pi   pi   4096 Oct 14 10:46 .
+drwxr-xr-x  8 pi   pi   4096 Oct 14 10:47 raspinfo
+pi@dphrpi100:~/raspinfo/dphrpi100 $ 
+
