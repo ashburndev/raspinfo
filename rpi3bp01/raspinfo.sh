@@ -10,6 +10,10 @@ hostname -I
 
 uname -a
 
+cat /etc/debian_version
+
+cat /etc/os-release
+
 cat /proc/cpuinfo | tail -3
 
 lsb_release -a
@@ -60,9 +64,9 @@ lsusb | sort
 
 lsusb -t
 
-free -o
+free
 
-free -o -h
+free --human
 
 df -k
 

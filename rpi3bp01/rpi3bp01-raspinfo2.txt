@@ -1,0 +1,714 @@
+pi@rpi3bp01:~ $ date
+Tue Jun 26 06:07:10 EDT 2018
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ uptime
+ 06:07:10 up 2 days, 20:06,  2 users,  load average: 0.13, 0.12, 0.04
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ hostname
+rpi3bp01
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ hostname -I
+10.0.0.164 2601:5cc:c800:1c59::fb8c 2601:5cc:c800:1c59:d18b:876e:9965:69e5 
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ uname -a
+Linux rpi3bp01 4.14.30-v7+ #1102 SMP Mon Mar 26 16:45:49 BST 2018 armv7l GNU/Linux
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ cat /etc/debian_version
+9.4
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ cat /etc/os-release
+PRETTY_NAME="Raspbian GNU/Linux 9 (stretch)"
+NAME="Raspbian GNU/Linux"
+VERSION_ID="9"
+VERSION="9 (stretch)"
+ID=raspbian
+ID_LIKE=debian
+HOME_URL="http://www.raspbian.org/"
+SUPPORT_URL="http://www.raspbian.org/RaspbianForums"
+BUG_REPORT_URL="http://www.raspbian.org/RaspbianBugs"
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ cat /proc/cpuinfo | tail -3
+Hardware	: BCM2835
+Revision	: a020d3
+Serial		: 00000000c47ff376
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Raspbian
+Description:	Raspbian GNU/Linux 9.4 (stretch)
+Release:	9.4
+Codename:	stretch
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ lscpu
+Architecture:          armv7l
+Byte Order:            Little Endian
+CPU(s):                4
+On-line CPU(s) list:   0-3
+Thread(s) per core:    1
+Core(s) per socket:    4
+Socket(s):             1
+Model:                 4
+Model name:            ARMv7 Processor rev 4 (v7l)
+CPU max MHz:           1400.0000
+CPU min MHz:           600.0000
+BogoMIPS:              89.60
+Flags:                 half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ vcgencmd version
+Mar 23 2018 16:31:10 
+Copyright (c) 2012 Broadcom
+version d92349b3d22c277e44d508a2aae6af2b1e5bb224 (clean) (release)
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ vcgencmd get_lcd_info
+1920 1080 24
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ vcgencmd measure_temp
+temp=50.5'C
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ vcgencmd get_mem arm && vcgencmd get_mem gpu
+arm=948M
+gpu=76M
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ java -version
+java version "1.8.0_65"
+Java(TM) SE Runtime Environment (build 1.8.0_65-b17)
+Java HotSpot(TM) Client VM (build 25.65-b01, mixed mode)
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ javac -version
+javac 1.8.0_65
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ gcc --version
+gcc (Raspbian 6.3.0-18+rpi1+deb9u1) 6.3.0 20170516
+Copyright (C) 2016 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ ruby -v
+ruby 2.3.3p222 (2016-11-21) [arm-linux-gnueabihf]
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ rvm --version
+bash: rvm: command not found
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ python -V
+Python 2.7.13
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ python2 -V
+Python 2.7.13
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ python3 -V
+Python 3.5.3
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ node -v
+v4.8.2
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ npm -v
+bash: npm: command not found
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ git --version
+git version 2.11.0
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ iwconfig
+lo        no wireless extensions.
+
+eth0      no wireless extensions.
+
+wlan0     IEEE 802.11  ESSID:off/any  
+          Mode:Managed  Access Point: Not-Associated   Tx-Power=31 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:on
+          
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.164  netmask 255.255.255.0  broadcast 10.0.0.255
+        inet6 2601:5cc:c800:1c59::fb8c  prefixlen 128  scopeid 0x0<global>
+        inet6 2601:5cc:c800:1c59:d18b:876e:9965:69e5  prefixlen 64  scopeid 0x0<global>
+        inet6 fe80::cf9b:384a:a80a:88c2  prefixlen 64  scopeid 0x20<link>
+        ether b8:27:eb:7f:f3:76  txqueuelen 1000  (Ethernet)
+        RX packets 185423  bytes 66291214 (63.2 MiB)
+        RX errors 0  dropped 18  overruns 0  frame 0
+        TX packets 41731  bytes 9945962 (9.4 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlan0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether b8:27:eb:2a:a6:23  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ netstat -rn
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+0.0.0.0         10.0.0.1        0.0.0.0         UG        0 0          0 eth0
+10.0.0.0        0.0.0.0         255.255.255.0   U         0 0          0 eth0
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ lsusb --version
+lsusb (usbutils) 007
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ lsusb
+Bus 001 Device 004: ID 1c4f:0065 SiGma Micro 
+Bus 001 Device 005: ID 046d:c31c Logitech, Inc. Keyboard K120
+Bus 001 Device 006: ID 0424:7800 Standard Microsystems Corp. 
+Bus 001 Device 003: ID 0424:2514 Standard Microsystems Corp. USB 2.0 Hub
+Bus 001 Device 002: ID 0424:2514 Standard Microsystems Corp. USB 2.0 Hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ lsusb | sort
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0424:2514 Standard Microsystems Corp. USB 2.0 Hub
+Bus 001 Device 003: ID 0424:2514 Standard Microsystems Corp. USB 2.0 Hub
+Bus 001 Device 004: ID 1c4f:0065 SiGma Micro 
+Bus 001 Device 005: ID 046d:c31c Logitech, Inc. Keyboard K120
+Bus 001 Device 006: ID 0424:7800 Standard Microsystems Corp. 
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ lsusb -t
+/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=dwc_otg/1p, 480M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 480M
+        |__ Port 1: Dev 3, If 0, Class=Hub, Driver=hub/3p, 480M
+            |__ Port 1: Dev 6, If 0, Class=Vendor Specific Class, Driver=lan78xx, 480M
+            |__ Port 3: Dev 5, If 0, Class=Human Interface Device, Driver=usbhid, 1.5M
+            |__ Port 3: Dev 5, If 1, Class=Human Interface Device, Driver=usbhid, 1.5M
+        |__ Port 2: Dev 4, If 0, Class=Human Interface Device, Driver=usbhid, 1.5M
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ free
+              total        used        free      shared  buff/cache   available
+Mem:         949476      288440       86736       92088      574300      538628
+Swap:        102396           0      102396
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ free --human
+              total        used        free      shared  buff/cache   available
+Mem:           927M        281M         84M         89M        560M        526M
+Swap:           99M          0B         99M
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ df -k
+Filesystem     1K-blocks    Used Available Use% Mounted on
+/dev/root       15201568 4493732  10025888  31% /
+devtmpfs          470128       0    470128   0% /dev
+tmpfs             474736   64792    409944  14% /dev/shm
+tmpfs             474736   12348    462388   3% /run
+tmpfs               5120       4      5116   1% /run/lock
+tmpfs             474736       0    474736   0% /sys/fs/cgroup
+/dev/mmcblk0p1     42131   22027     20104  53% /boot
+tmpfs              94944       0     94944   0% /run/user/1000
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        15G  4.3G  9.6G  31% /
+devtmpfs        460M     0  460M   0% /dev
+tmpfs           464M   64M  401M  14% /dev/shm
+tmpfs           464M   13M  452M   3% /run
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           464M     0  464M   0% /sys/fs/cgroup
+/dev/mmcblk0p1   42M   22M   20M  53% /boot
+tmpfs            93M     0   93M   0% /run/user/1000
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ sudo fdisk -l | tail -5
+Disk identifier: 0x87b5bc78
+
+Device         Boot Start      End  Sectors  Size Id Type
+/dev/mmcblk0p1       8192    93802    85611 41.8M  c W95 FAT32 (LBA)
+/dev/mmcblk0p2      98304 31116287 31017984 14.8G 83 Linux
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ sudo blkid
+/dev/mmcblk0p1: LABEL="boot" UUID="A75B-DC79" TYPE="vfat" PARTUUID="87b5bc78-01"
+/dev/mmcblk0p2: LABEL="rootfs" UUID="485ec5bf-9c78-45a6-9314-32be1d0dea38" TYPE="ext4" PARTUUID="87b5bc78-02"
+/dev/mmcblk0: PTUUID="87b5bc78" PTTYPE="dos"
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ lsblk
+NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+mmcblk0     179:0    0 14.9G  0 disk 
+├─mmcblk0p1 179:1    0 41.8M  0 part /boot
+└─mmcblk0p2 179:2    0 14.8G  0 part /
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ sudo parted -l
+Model: SD SL16G (sd/mmc)
+Disk /dev/mmcblk0: 15.9GB
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+Disk Flags: 
+
+Number  Start   End     Size    Type     File system  Flags
+ 1      4194kB  48.0MB  43.8MB  primary  fat32        lba
+ 2      50.3MB  15.9GB  15.9GB  primary  ext4
+
+
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ mount
+/dev/mmcblk0p2 on / type ext4 (rw,noatime,data=ordered)
+devtmpfs on /dev type devtmpfs (rw,relatime,size=470128k,nr_inodes=117532,mode=755)
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+proc on /proc type proc (rw,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,mode=755)
+tmpfs on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/lib/systemd/systemd-cgroups-agent,name=systemd)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)
+cgroup on /sys/fs/cgroup/net_cls type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=28,pgrp=1,timeout=0,minproto=5,maxproto=5,direct)
+sunrpc on /run/rpc_pipefs type rpc_pipefs (rw,relatime)
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+mqueue on /dev/mqueue type mqueue (rw,relatime)
+configfs on /sys/kernel/config type configfs (rw,relatime)
+/dev/mmcblk0p1 on /boot type vfat (rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,errors=remount-ro)
+tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,size=94944k,mode=700,uid=1000,gid=1000)
+gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime,user_id=1000,group_id=1000)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,relatime)
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ sudo service --status-all
+ [ - ]  alsa-utils
+ [ + ]  avahi-daemon
+ [ + ]  bluetooth
+ [ - ]  console-setup.sh
+ [ + ]  cron
+ [ + ]  dbus
+ [ + ]  dhcpcd
+ [ + ]  dphys-swapfile
+ [ + ]  fake-hwclock
+ [ - ]  hwclock.sh
+ [ - ]  keyboard-setup.sh
+ [ + ]  kmod
+ [ + ]  lightdm
+ [ + ]  networking
+ [ - ]  nfs-common
+ [ - ]  paxctld
+ [ - ]  plymouth
+ [ - ]  plymouth-log
+ [ + ]  procps
+ [ + ]  raspi-config
+ [ - ]  rpcbind
+ [ - ]  rsync
+ [ + ]  rsyslog
+ [ + ]  ssh
+ [ - ]  sudo
+ [ + ]  triggerhappy
+ [ + ]  udev
+ [ - ]  x11-common
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ fbset
+
+mode "1824x984"
+    geometry 1824 984 1824 984 32
+    timings 0 0 0 0 0 0 0
+    rgba 8/16,8/8,8/0,8/24
+endmode
+
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ xrandr
+xrandr: Failed to get size of gamma for output default
+Screen 0: minimum 1824 x 984, current 1824 x 984, maximum 1824 x 984
+default connected 1824x984+0+0 0mm x 0mm
+   1824x984       0.00* 
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ tvservice -n
+device_name=ACI-VG248
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ tvservice -s
+state 0x12000a [HDMI CEA (16) RGB lim 16:9], 1920x1080 @ 60.00Hz, progressive
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ tvservice -a
+     PCM supported: Max channels: 2, Max samplerate:  48kHz, Max samplesize 24 bits.
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ tvservice -m CEA && tvservice -m DMT
+Group CEA has 11 modes:
+           mode 1: 640x480 @ 60Hz 4:3, clock:25MHz progressive 
+           mode 2: 720x480 @ 60Hz 4:3, clock:27MHz progressive 
+           mode 3: 720x480 @ 60Hz 16:9, clock:27MHz progressive 
+           mode 4: 1280x720 @ 60Hz 16:9, clock:74MHz progressive 
+           mode 5: 1920x1080 @ 60Hz 16:9, clock:74MHz interlaced 
+  (prefer) mode 16: 1920x1080 @ 60Hz 16:9, clock:148MHz progressive 
+           mode 17: 720x576 @ 50Hz 4:3, clock:27MHz progressive 
+           mode 18: 720x576 @ 50Hz 16:9, clock:27MHz progressive 
+           mode 19: 1280x720 @ 50Hz 16:9, clock:74MHz progressive 
+           mode 20: 1920x1080 @ 50Hz 16:9, clock:74MHz interlaced 
+           mode 31: 1920x1080 @ 50Hz 16:9, clock:148MHz progressive 
+Group DMT has 18 modes:
+           mode 4: 640x480 @ 60Hz 4:3, clock:25MHz progressive 
+           mode 6: 640x480 @ 75Hz 4:3, clock:31MHz progressive 
+           mode 8: 800x600 @ 56Hz 4:3, clock:36MHz progressive 
+           mode 9: 800x600 @ 60Hz 4:3, clock:40MHz progressive 
+           mode 10: 800x600 @ 72Hz 4:3, clock:50MHz progressive 
+           mode 11: 800x600 @ 75Hz 4:3, clock:49MHz progressive 
+           mode 16: 1024x768 @ 60Hz 4:3, clock:65MHz progressive 
+           mode 17: 1024x768 @ 70Hz 4:3, clock:75MHz progressive 
+           mode 18: 1024x768 @ 75Hz 4:3, clock:78MHz progressive 
+           mode 21: 1152x864 @ 75Hz 4:3, clock:108MHz progressive 
+           mode 28: 1280x800 @ 60Hz 16:10, clock:83MHz progressive 
+           mode 32: 1280x960 @ 60Hz 4:3, clock:108MHz progressive 
+           mode 35: 1280x1024 @ 60Hz 5:4, clock:108MHz progressive 
+           mode 36: 1280x1024 @ 75Hz 5:4, clock:135MHz progressive 
+           mode 47: 1440x900 @ 60Hz 16:10, clock:106MHz progressive 
+           mode 58: 1680x1050 @ 60Hz 16:10, clock:146MHz progressive 
+           mode 81: 1366x768 @ 60Hz 16:9, clock:85MHz progressive 
+           mode 85: 1280x720 @ 60Hz 16:9, clock:74MHz progressive 
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ tvservice -d edid.dat
+Written 256 bytes to edid.dat
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ xxd -g l edid.dat
+00000000: 00ffffffffffff000469a52401010101  .........i.$....
+00000010: 0418010380351e78ea9de5a654549f26  .....5.x....TT.&
+00000020: 0d5054b7ef00714f8180814081c08100  .PT...qO...@....
+00000030: 9500b3000101023a801871382d40582c  .......:..q8-@X,
+00000040: 4500132b2100001e000000fd00324c1e  E..+!........2L.
+00000050: 5311000a202020202020000000fc0056  S...      .....V
+00000060: 473234380a20202020202020000000ff  G248.       ....
+00000070: 0045314c4d51533034323038310a01f9  .E1LMQS042081...
+00000080: 02031ef14b900504030201111213141f  ....K...........
+00000090: 230907078301000065030c0010001a36  #.......e......6
+000000a0: 80a070381e4030203500132b2100001a  ..p8.@0 5..+!...
+000000b0: 662156aa51001e30468f3300132b2100  f!V.Q..0F.3..+!.
+000000c0: 001e011d007251d01e206e285500132b  .....rQ.. n(U..+
+000000d0: 2100001e8c0ad08a20e02d10103e9600  !....... .-..>..
+000000e0: 132b21000018011d8018711c1620582c  .+!.......q.. X,
+000000f0: 2500132b2100009e000000000000003a  %..+!..........:
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ edidparser edid.dat
+Enabling fuzzy format match...
+Parsing edid.dat...
+HDMI:EDID version 1.3, 1 extensions, screen size 53x30 cm
+HDMI:EDID features - videodef 0x80 standby suspend active off; colour encoding:RGB444|YCbCr422; sRGB is not default colourspace; preferred format is native; does not support GTF
+HDMI:EDID found monitor range descriptor tag 0xfd
+HDMI:EDID monitor range offsets: V min=0, V max=0, H min=0, H max=0
+HDMI:EDID monitor range: vertical is 50-76 Hz, horizontal is 30-83 kHz, max pixel clock is 170 MHz
+HDMI:EDID monitor range does not support GTF
+HDMI:EDID found monitor name descriptor tag 0xfc
+HDMI:EDID monitor name is VG248
+HDMI:EDID found monitor S/N descriptor tag 0xff
+HDMI:EDID found preferred CEA detail timing format: 1920x1080p @ 60 Hz (16)
+HDMI:EDID established timing I/II bytes are B7 EF 00
+HDMI:EDID found DMT format: code 4, 640x480p @ 60 Hz in established timing I/II
+HDMI:EDID found DMT format: code 6, 640x480p @ 75 Hz in established timing I/II
+HDMI:EDID found DMT format: code 8, 800x600p @ 56 Hz in established timing I/II
+HDMI:EDID found DMT format: code 9, 800x600p @ 60 Hz in established timing I/II
+HDMI:EDID found DMT format: code 10, 800x600p @ 72 Hz in established timing I/II
+HDMI:EDID found DMT format: code 11, 800x600p @ 75 Hz in established timing I/II
+HDMI:EDID found DMT format: code 16, 1024x768p @ 60 Hz in established timing I/II
+HDMI:EDID found DMT format: code 17, 1024x768p @ 70 Hz in established timing I/II
+HDMI:EDID found DMT format: code 18, 1024x768p @ 75 Hz in established timing I/II
+HDMI:EDID found DMT format: code 36, 1280x1024p @ 75 Hz in established timing I/II
+HDMI:EDID standard timings block x 8: 0x714F 8180 8140 81C0 8100 9500 B300 0101 
+HDMI:EDID found DMT format: code 21, 1152x864p @ 75 Hz (4:3) in standard timing 0
+HDMI:EDID found DMT format: code 35, 1280x1024p @ 60 Hz (5:4) in standard timing 1
+HDMI:EDID found DMT format: code 32, 1280x960p @ 60 Hz (4:3) in standard timing 2
+HDMI:EDID found DMT format: code 85, 1280x720p @ 60 Hz (16:9) in standard timing 3
+HDMI:EDID found DMT format: code 28, 1280x800p @ 60 Hz (16:10) in standard timing 4
+HDMI:EDID found DMT format: code 47, 1440x900p @ 60 Hz (16:10) in standard timing 5
+HDMI:EDID found DMT format: code 58, 1680x1050p @ 60 Hz (16:10) in standard timing 6
+HDMI:EDID parsing v3 CEA extension 0
+HDMI:EDID monitor support - underscan IT formats:yes, basic audio:yes, yuv444:yes, yuv422:yes, #native DTD:1
+HDMI:EDID failed to find a matching detail format for 1920x1080p hfp:48 hs:32 hbp:80 vfp:3 vs:5 vbp:22 pixel clock:138 MHz
+HDMI:EDID calculated refresh rate is 60 Hz
+HDMI:EDID guessing the format to be 1920x1080p @60 Hz
+HDMI:EDID found CEA detail timing format: 1920x1080p @ 60 Hz (16)
+HDMI:EDID found DMT detail timing format: 1366x768p @ 60 Hz (81)
+HDMI:EDID found CEA detail timing format: 1280x720p @ 60 Hz (4)
+HDMI:EDID found CEA detail timing format: 720x480p @ 60 Hz (2)
+HDMI:EDID found CEA detail timing format: 1920x1080i @ 60 Hz (5)
+HDMI:EDID found CEA format: code 16, 1920x1080p @ 60Hz (native)
+HDMI:EDID found CEA format: code 5, 1920x1080i @ 60Hz 
+HDMI:EDID found CEA format: code 4, 1280x720p @ 60Hz 
+HDMI:EDID found CEA format: code 3, 720x480p @ 60Hz 
+HDMI:EDID found CEA format: code 2, 720x480p @ 60Hz 
+HDMI:EDID found CEA format: code 1, 640x480p @ 60Hz 
+HDMI:EDID found CEA format: code 17, 720x576p @ 50Hz 
+HDMI:EDID found CEA format: code 18, 720x576p @ 50Hz 
+HDMI:EDID found CEA format: code 19, 1280x720p @ 50Hz 
+HDMI:EDID found CEA format: code 20, 1920x1080i @ 50Hz 
+HDMI:EDID found CEA format: code 31, 1920x1080p @ 50Hz 
+HDMI:EDID found audio format 2 channels PCM, sample rate: 32|44|48 kHz, sample size: 16|20|24 bits
+HDMI:EDID found HDMI VSDB length 5
+HDMI:EDID HDMI VSDB has physical address 1.0.0.0
+HDMI:EDID HDMI VSDB has no extension fields
+HDMI:EDID filtering formats with pixel clock > 162 MHz or h. blanking > 1023
+HDMI:EDID best score mode initialised to CEA (1) 640x480p @ 60 Hz with pixel clock 25 MHz (score 0)
+HDMI:EDID best score mode is now CEA (1) 640x480p @ 60 Hz with pixel clock 25 MHz (score 61864)
+HDMI:EDID best score mode is now CEA (2) 720x480p @ 60 Hz with pixel clock 27 MHz (score 3066472)
+HDMI:EDID CEA mode (3) 720x480p @ 60 Hz with pixel clock 27 MHz has a score of 66472
+HDMI:EDID best score mode is now CEA (4) 1280x720p @ 60 Hz with pixel clock 74 MHz (score 3635592)
+HDMI:EDID DMT mode (4) 640x480p @ 60 Hz with pixel clock 25 MHz has a score of 18432
+HDMI:EDID CEA mode (5) 1920x1080i @ 60 Hz with pixel clock 74 MHz has a score of 2773832
+HDMI:EDID DMT mode (6) 640x480p @ 75 Hz with pixel clock 31 MHz has a score of 23040
+HDMI:EDID DMT mode (8) 800x600p @ 56 Hz with pixel clock 36 MHz has a score of 26880
+HDMI:EDID DMT mode (9) 800x600p @ 60 Hz with pixel clock 40 MHz has a score of 28800
+HDMI:EDID DMT mode (10) 800x600p @ 72 Hz with pixel clock 50 MHz has a score of 34560
+HDMI:EDID DMT mode (11) 800x600p @ 75 Hz with pixel clock 49 MHz has a score of 36000
+HDMI:EDID best score mode is now CEA (16) 1920x1080p @ 60 Hz with pixel clock 148 MHz (score 5398248)
+HDMI:EDID DMT mode (16) 1024x768p @ 60 Hz with pixel clock 65 MHz has a score of 47185
+HDMI:EDID CEA mode (17) 720x576p @ 50 Hz with pixel clock 27 MHz has a score of 66472
+HDMI:EDID DMT mode (17) 1024x768p @ 70 Hz with pixel clock 75 MHz has a score of 55050
+HDMI:EDID CEA mode (18) 720x576p @ 50 Hz with pixel clock 27 MHz has a score of 66472
+HDMI:EDID DMT mode (18) 1024x768p @ 75 Hz with pixel clock 78 MHz has a score of 58982
+HDMI:EDID CEA mode (19) 1280x720p @ 50 Hz with pixel clock 74 MHz has a score of 117160
+HDMI:EDID CEA mode (20) 1920x1080i @ 50 Hz with pixel clock 74 MHz has a score of 128680
+HDMI:EDID DMT mode (21) 1152x864p @ 75 Hz with pixel clock 108 MHz has a score of 99649
+HDMI:EDID DMT mode (28) 1280x800p @ 60 Hz with pixel clock 83 MHz has a score of 86440
+HDMI:EDID CEA mode (31) 1920x1080p @ 50 Hz with pixel clock 148 MHz has a score of 232360
+HDMI:EDID DMT mode (32) 1280x960p @ 60 Hz with pixel clock 108 MHz has a score of 98728
+HDMI:EDID DMT mode (35) 1280x1024p @ 60 Hz with pixel clock 108 MHz has a score of 103643
+HDMI:EDID DMT mode (36) 1280x1024p @ 75 Hz with pixel clock 135 MHz has a score of 98304
+HDMI:EDID DMT mode (47) 1440x900p @ 60 Hz with pixel clock 106 MHz has a score of 102760
+HDMI:EDID DMT mode (58) 1680x1050p @ 60 Hz with pixel clock 146 MHz has a score of 130840
+HDMI:EDID DMT mode (81) 1366x768p @ 60 Hz with pixel clock 85 MHz has a score of 4062945
+HDMI:EDID DMT mode (85) 1280x720p @ 60 Hz with pixel clock 74 MHz has a score of 80296
+HDMI:EDID preferred mode remained as CEA (16) 1920x1080p @ 60 Hz with pixel clock 148 MHz
+HDMI:EDID has HDMI support and audio support
+edidparser exited with code 0
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ cat /proc/sys/kernel/hostname
+rpi3bp01
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ cat /proc/sys/kernel/ostype
+Linux
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ cat /proc/sys/kernel/osrelease
+4.14.30-v7+
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ cat /proc/sys/kernel/pid_max
+32768
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ cat /proc/sys/kernel/poweroff_cmd
+/sbin/poweroff
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ cat /proc/version
+Linux version 4.14.30-v7+ (dc4@dc4-XPS13-9333) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1102 SMP Mon Mar 26 16:45:49 BST 2018
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ cat /proc/meminfo
+MemTotal:         949476 kB
+MemFree:          155648 kB
+MemAvailable:     537696 kB
+Buffers:            1096 kB
+Cached:           481076 kB
+SwapCached:            0 kB
+Active:           428356 kB
+Inactive:         311968 kB
+Active(anon):     233708 kB
+Inactive(anon):    90532 kB
+Active(file):     194648 kB
+Inactive(file):   221436 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:        102396 kB
+SwapFree:         102396 kB
+Dirty:                40 kB
+Writeback:             0 kB
+AnonPages:        258180 kB
+Mapped:           251668 kB
+Shmem:             92088 kB
+Slab:              35464 kB
+SReclaimable:      22040 kB
+SUnreclaim:        13424 kB
+KernelStack:        1992 kB
+PageTables:         5824 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      577132 kB
+Committed_AS:    1665060 kB
+VmallocTotal:    1114112 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+CmaTotal:           8192 kB
+CmaFree:            6788 kB
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ cat /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 89.60
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 89.60
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 89.60
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 89.60
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+Hardware	: BCM2835
+Revision	: a020d3
+Serial		: 00000000c47ff376
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ cat /proc/cmdline
+8250.nr_uarts=0 bcm2708_fb.fbwidth=1824 bcm2708_fb.fbheight=984 bcm2708_fb.fbswap=1 vc_mem.mem_base=0x3ec00000 vc_mem.mem_size=0x40000000  dwc_otg.lpm_enable=0 console=ttyS0,115200 console=tty1 root=PARTUUID=87b5bc78-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ cat /proc/partitions
+major minor  #blocks  name
+
+   1        0       4096 ram0
+   1        1       4096 ram1
+   1        2       4096 ram2
+   1        3       4096 ram3
+   1        4       4096 ram4
+   1        5       4096 ram5
+   1        6       4096 ram6
+   1        7       4096 ram7
+   1        8       4096 ram8
+   1        9       4096 ram9
+   1       10       4096 ram10
+   1       11       4096 ram11
+   1       12       4096 ram12
+   1       13       4096 ram13
+   1       14       4096 ram14
+   1       15       4096 ram15
+ 179        0   15558144 mmcblk0
+ 179        1      42805 mmcblk0p1
+ 179        2   15508992 mmcblk0p2
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ ls -latr /
+total 79
+dr-xr-xr-x 134 root root     0 Dec 31  1969 proc
+drwxr-xr-x   5 root root  2560 Dec 31  1969 boot
+drwxr-xr-x   2 root root  4096 Mar 13 17:41 mnt
+drwxr-xr-x   2 root root  4096 Mar 13 17:41 srv
+drwxr-xr-x   2 root root  4096 Mar 13 17:41 media
+drwxr-xr-x   3 root root  4096 Mar 13 17:55 home
+drwxr-xr-x  16 root root  4096 Mar 13 18:08 lib
+drwxr-xr-x   2 root root  4096 Mar 13 18:13 bin
+drwxr-xr-x   2 root root  4096 Mar 13 18:13 sbin
+drwxr-xr-x  11 root root  4096 Mar 13 18:30 usr
+drwxr-xr-x   7 root root  4096 Mar 13 18:48 opt
+drwx------   2 root root 16384 Mar 13 19:10 lost+found
+drwx------   4 root root  4096 Mar 13 19:16 root
+drwxr-xr-x  21 root root  4096 Mar 13 19:16 ..
+drwxr-xr-x  21 root root  4096 Mar 13 19:16 .
+drwxr-xr-x  11 root root  4096 Mar 13 19:16 var
+drwxr-xr-x 111 root root  4096 Apr 15 12:04 etc
+drwxr-xr-x  14 root root  3380 Jun 23 10:00 dev
+drwxr-xr-x  28 root root   820 Jun 23 10:33 run
+dr-xr-xr-x  12 root root     0 Jun 23 10:33 sys
+drwxrwxrwt  13 root root  4096 Jun 26 06:07 tmp
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ ls -latr /boot
+total 21679
+drwxr-xr-x  5 root root    2560 Dec 31  1969 .
+-rwxr-xr-x  1 root root     187 Dec 31  1979 cmdline.txt
+-rwxr-xr-x  1 root root    1590 Mar 13 18:01 config.txt
+-rwxr-xr-x  1 root root   18974 Mar 13 19:16 LICENSE.oracle
+-rwxr-xr-x  1 root root     145 Mar 13 19:16 issue.txt
+drwxr-xr-x 21 root root    4096 Mar 13 19:16 ..
+-rwxr-xr-x  1 root root    4096 Apr 15 07:03 ._.Trashes
+drwxr-xr-x  2 root root     512 Apr 15 07:03 .Trashes
+drwxr-xr-x  2 root root     512 Apr 15 07:03 .fseventsd
+-rwxr-xr-x  1 root root 2824484 Apr 15 12:02 start.elf
+-rwxr-xr-x  1 root root 4967492 Apr 15 12:02 start_db.elf
+-rwxr-xr-x  1 root root  672804 Apr 15 12:02 start_cd.elf
+-rwxr-xr-x  1 root root 3911492 Apr 15 12:02 start_x.elf
+-rwxr-xr-x  1 root root    1494 Apr 15 12:02 LICENCE.broadcom
+-rwxr-xr-x  1 root root    9726 Apr 15 12:02 fixup_x.dat
+-rwxr-xr-x  1 root root    9722 Apr 15 12:02 fixup_db.dat
+-rwxr-xr-x  1 root root    6569 Apr 15 12:02 fixup.dat
+-rwxr-xr-x  1 root root    2595 Apr 15 12:02 fixup_cd.dat
+-rwxr-xr-x  1 root root   52064 Apr 15 12:02 bootcode.bin
+-rwxr-xr-x  1 root root   21474 Apr 15 12:02 bcm2708-rpi-cm.dtb
+-rwxr-xr-x  1 root root   22020 Apr 15 12:02 bcm2708-rpi-b-plus.dtb
+-rwxr-xr-x  1 root root   21761 Apr 15 12:02 bcm2708-rpi-b.dtb
+-rwxr-xr-x  1 root root   22264 Apr 15 12:02 bcm2708-rpi-0-w.dtb
+-rwxr-xr-x  1 root root 4622320 Apr 15 12:02 kernel.img
+-rwxr-xr-x  1 root root 4867400 Apr 15 12:02 kernel7.img
+-rwxr-xr-x  1 root root   22952 Apr 15 12:02 bcm2710-rpi-cm3.dtb
+-rwxr-xr-x  1 root root   24503 Apr 15 12:02 bcm2710-rpi-3-b-plus.dtb
+-rwxr-xr-x  1 root root   24240 Apr 15 12:02 bcm2710-rpi-3-b.dtb
+-rwxr-xr-x  1 root root   23044 Apr 15 12:02 bcm2709-rpi-2-b.dtb
+-rwxr-xr-x  1 root root   18693 Apr 15 12:02 COPYING.linux
+drwxr-xr-x  2 root root   11264 Apr 15 12:03 overlays
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ ls -latr /etc/ssh
+total 592
+-rw-r--r--   1 root root   3298 Mar  1 10:17 sshd_config
+-rw-r--r--   1 root root   1723 Mar  1 10:17 ssh_config
+-rw-r--r--   1 root root 553122 Mar  1 10:17 moduli
+-rw-r--r--   1 root root    398 Mar 13 19:17 ssh_host_rsa_key.pub
+-rw-------   1 root root   1679 Mar 13 19:17 ssh_host_rsa_key
+-rw-r--r--   1 root root    606 Mar 13 19:17 ssh_host_dsa_key.pub
+-rw-------   1 root root    668 Mar 13 19:17 ssh_host_dsa_key
+-rw-r--r--   1 root root    178 Mar 13 19:17 ssh_host_ecdsa_key.pub
+-rw-------   1 root root    227 Mar 13 19:17 ssh_host_ecdsa_key
+-rw-r--r--   1 root root     98 Mar 13 19:17 ssh_host_ed25519_key.pub
+-rw-------   1 root root    411 Mar 13 19:17 ssh_host_ed25519_key
+drwxr-xr-x   2 root root   4096 Mar 13 19:17 .
+drwxr-xr-x 111 root root   4096 Apr 15 12:04 ..
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ ls -latr ~
+total 204
+drwxr-xr-x  3 root root  4096 Mar 13 17:55 ..
+-rw-r--r--  1 pi   pi     675 Mar 13 17:55 .profile
+-rw-r--r--  1 pi   pi    3523 Mar 13 17:55 .bashrc
+-rw-r--r--  1 pi   pi     220 Mar 13 17:55 .bash_logout
+drwxr-xr-x  2 pi   pi    4096 Mar 13 18:41 python_games
+drwxr-xr-x  3 pi   pi    4096 Mar 13 18:41 .local
+drwxr-xr-x  2 pi   pi    4096 Mar 13 19:17 Videos
+drwxr-xr-x  2 pi   pi    4096 Mar 13 19:17 Templates
+drwxr-xr-x  2 pi   pi    4096 Mar 13 19:17 Public
+drwxr-xr-x  2 pi   pi    4096 Mar 13 19:17 Pictures
+drwxr-xr-x  2 pi   pi    4096 Mar 13 19:17 Music
+drwxr-xr-x  2 pi   pi    4096 Mar 13 19:17 Downloads
+drwxr-xr-x  2 pi   pi    4096 Mar 13 19:17 Documents
+drwxr-xr-x  2 pi   pi    4096 Mar 13 19:17 Desktop
+drwx------  3 pi   pi    4096 Mar 13 19:17 .gnupg
+drwxr-xr-x  3 pi   pi    4096 Mar 13 19:17 .themes
+drwxr-xr-x  2 pi   pi    4096 Apr 15 11:22 .oracle_jre_usage
+drwx------  3 pi   pi    4096 Apr 15 11:23 .pki
+drwxr-xr-x  6 pi   pi    4096 Apr 15 11:23 .cache
+drwx------  3 pi   pi    4096 Apr 15 11:30 .dbus
+-rw-r--r--  1 pi   pi      35 Apr 15 11:32 .dmrc
+-rw-r--r--  1 pi   pi   69723 Apr 15 14:48 apt-list-installed.txt
+-rw-------  1 pi   pi    3954 Jun 22 11:55 .xsession-errors.old
+-rw-------  1 pi   pi     236 Jun 23 09:59 .bash_history
+-rw-------  1 pi   pi     109 Jun 23 10:00 .Xauthority
+-rw-------  1 pi   pi    3954 Jun 23 10:00 .xsession-errors
+drwx------  2 pi   pi    4096 Jun 23 10:02 .ssh
+drwx------ 11 pi   pi    4096 Jun 23 10:13 .config
+drwxr-xr-x  2 pi   pi    4096 Jun 23 10:25 temp
+drwxr-xr-x  9 pi   pi    4096 Jun 23 10:31 raspinfo
+-rw-r--r--  1 pi   pi      99 Jun 23 10:40 .gitconfig
+-rw-r--r--  1 pi   pi    3382 Jun 23 10:48 stuff-20180623.txt
+drwxr-xr-x 22 pi   pi    4096 Jun 26 06:07 .
+-rw-r--r--  1 pi   pi     256 Jun 26 06:07 edid.dat
+pi@rpi3bp01:~ $ 
+pi@rpi3bp01:~ $ 
+
