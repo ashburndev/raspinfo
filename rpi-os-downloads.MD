@@ -26,7 +26,22 @@ Here is a sample of the Raspbian OS images I have downloaded recently.
     -rw-rw-r--  1 ashburndave ashburndave        473 Jul  2 06:59 2018-03-13-raspbian-stretch.zip.sig
     -rw-rw-r--  1 ashburndave ashburndave      34143 Jul  2 06:59 2018-03-13-raspbian-stretch.zip.torrent
 
-Here is Linux example of confirming the contents of the download by comparing the posted sha256 value with the computed sha254 value.
+Here is Linux example of confirming the contents of the download by comparing the posted sha256 value with the computed sha256 value.
+
+    ashburndave@dphnuc4:~/Downloads$ shasum -a 256 2018-03-13-raspbian-stretch.zip
+    d6d64a8bfad37de6bc7d975a335c69b8c6164a33b1ef0c79c888a9b83db5063f  2018-03-13-raspbian-stretch.zip
+    ashburndave@dphnuc4:~/Downloads$ 
+    ashburndave@dphnuc4:~/Downloads$ cat 2018-03-13-raspbian-stretch.zip.sha256
+    d6d64a8bfad37de6bc7d975a335c69b8c6164a33b1ef0c79c888a9b83db5063f  2018-03-13-raspbian-stretch.zip
+    ashburndave@dphnuc4:~/Downloads$ 
+    ashburndave@dphnuc4:~/Downloads$ shasum -a 256 2018-03-13-raspbian-stretch.zip -c 2018-03-13-raspbian-stretch.zip.sha256
+    shasum: 2018-03-13-raspbian-stretch.zip: no properly formatted SHA1 checksum lines found
+    2018-03-13-raspbian-stretch.zip: OK
+    ashburndave@dphnuc4:~/Downloads$ 
+    ashburndave@dphnuc4:~/Downloads$ shasum -a 256 2018-03-13-raspbian-stretch.zip | diff - 2018-03-13-raspbian-stretch.zip.sha256
+    ashburndave@dphnuc4:~/Downloads$ 
+
+
 
 
 
