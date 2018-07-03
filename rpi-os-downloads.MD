@@ -40,6 +40,9 @@ Here is Linux example of confirming the contents of the download by comparing th
     ashburndave@dphnuc4:~/Downloads$ 
     ashburndave@dphnuc4:~/Downloads$ shasum -a 256 2018-03-13-raspbian-stretch.zip | diff - 2018-03-13-raspbian-stretch.zip.sha256
     ashburndave@dphnuc4:~/Downloads$
+    ashburndave@dphnuc4:~/Downloads$ shasum -a 256 -c 2018-03-13-raspbian-stretch.zip.sha256
+    2018-03-13-raspbian-stretch.zip: OK
+    ashburndave@dphnuc4:~/Downloads$
 
 Here is a Linux example of listing the contents of the zip file and then extracting the contents of the zip file
 
@@ -67,4 +70,4 @@ Here is a Linux example of listing the contents of the zip file and then extract
     -rw-rw-r-- 1 ashburndave ashburndave 1776280071 Jul  2 06:58 2018-03-13-raspbian-stretch.zip
     drwxr-xr-x 3 ashburndave ashburndave      12288 Jul  3 06:41 ..
     drwxr-xr-x 2 ashburndave ashburndave       4096 Jul  3 06:43 .
-    ashburndave@dphnuc4:~/Downloads/tmp$ 
+    ashburndave@dphnuc4:~/Downloads/tmp$
