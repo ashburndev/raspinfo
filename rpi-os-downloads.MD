@@ -33,7 +33,7 @@ Here is Linux example of confirming the contents of the download by comparing th
 
 Here is a Linux example of listing the contents of the zip file and then extracting the contents of the zip file
 
-   ashburndave@dphnuc4:~/Downloads/tmp$ ls -latr
+    ashburndave@dphnuc4:~/Downloads/tmp$ ls -latr
     total 1734672
     -rw-rw-r-- 1 ashburndave ashburndave 1776280071 Jul  2 06:58 2018-03-13-raspbian-stretch.zip
     drwxr-xr-x 3 ashburndave ashburndave      12288 Jul  3 06:41 ..
