@@ -39,12 +39,7 @@ Here is Linux example of confirming the contents of the download by comparing th
     2018-03-13-raspbian-stretch.zip: OK
     ashburndave@dphnuc4:~/Downloads$ 
     ashburndave@dphnuc4:~/Downloads$ shasum -a 256 2018-03-13-raspbian-stretch.zip | diff - 2018-03-13-raspbian-stretch.zip.sha256
-    ashburndave@dphnuc4:~/Downloads$ 
-
-
-
-
-
+    ashburndave@dphnuc4:~/Downloads$
 
 Here is a Linux example of listing the contents of the zip file and then extracting the contents of the zip file
 
