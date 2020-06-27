@@ -1,0 +1,28 @@
+pi@dphrpi904:~/ri $ 
+pi@dphrpi904:~/ri $ neofetch
+  `.::///+:/-.        --///+//-:``    pi@dphrpi904 
+ `+oooooooooooo:   `+oooooooooooo:    ------------ 
+  /oooo++//ooooo:  ooooo+//+ooooo.    OS: Raspbian GNU/Linux 10 (buster) armv7l 
+  `+ooooooo:-:oo-  +o+::/ooooooo:     Host: Raspberry Pi 4 Model B Rev 1.1 
+   `:oooooooo+``    `.oooooooo+-      Kernel: 4.19.118-v7l+ 
+     `:++ooo/.        :+ooo+/.`       Uptime: 6 mins 
+        ...`  `.----.` ``..           Packages: 1979 (dpkg) 
+     .::::-``:::::::::.`-:::-`        Shell: bash 5.0.3 
+    -:::-`   .:::::::-`  `-:::-       Resolution: 1920x1080 
+   `::.  `.--.`  `` `.---.``.::`      DE: LXDE 
+       .::::::::`  -::::::::` `       WM: Openbox 
+ .::` .:::::::::- `::::::::::``::.    Theme: Adwaita [GTK3] 
+-:::` ::::::::::.  ::::::::::.`:::-   Icons: Adwaita [GTK3] 
+::::  -::::::::.   `-::::::::  ::::   Terminal: lxterminal 
+-::-   .-:::-.``....``.-::-.   -::-   Terminal Font: Monospace 10 
+ .. ``       .::::::::.     `..`..    CPU: BCM2835 (4) @ 1.500GHz 
+   -:::-`   -::::::::::`  .:::::`     Memory: 508MiB / 3906MiB 
+   :::::::` -::::::::::` :::::::.
+   .:::::::  -::::::::. ::::::::                              
+    `-:::::`   ..--.`   ::::::.
+      `...`  `...--..`  `...`
+            .::::::::::
+             `.-::::-`
+
+pi@dphrpi904:~/ri $ 
+
